@@ -1,0 +1,10 @@
+evidence_dir: "evidence"
+study_dir: "studies"
+sample_estimation: 30
+study:
+    "001":
+        description: "study_description"
+        preprocessor_module: "001.preprocessor"
+        runner_module: "001.runner"
+        postprocessor_module: "001.postprocessor"
+        significant_sample_size: 40
