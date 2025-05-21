@@ -1,4 +1,6 @@
 from typing import Any
+from pathlib import Path
+import inspect
 
 class StudyPreprocessor:
     """
@@ -30,7 +32,8 @@ class StudyPreprocessor:
 
         This method should initialize any required resources or parameters.
         """
-        raise NotImplementedError("This method should be overridden by subclasses")
+        file = inspect.getfile(self.__class__)
+        self.study_dir = Path(file).parent
     
     def magic(self) -> Any:
         """
