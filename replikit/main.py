@@ -73,15 +73,17 @@ def run(study: str, sample_estimation: bool, global_config: Dict[str, Any]) -> N
     
     study_config = global_config['study'][study]
     runner = load_class(global_config['study_dir'] + "." + study_config['runner_module'], "Runner")
-    runner = runner()
+    runner = runner(study_config)
     if sample_estimation:
         for i in range(global_config['sample_estimation']):
             runner.run(i)
             runner.save_evidence(i)
+            break #TODO: Remove
     else:
         for i in range(study_config['significant_sample_size']):
             runner.run(i)
             runner.save_evidence(i)
+            break #TODO: Remove
 
 def postprocess(study: str, global_config: Dict[str, Any]) -> None:
     """
@@ -101,7 +103,7 @@ def postprocess(study: str, global_config: Dict[str, Any]) -> None:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--study", required=True)
-    parser.add_argument("--sample_estimation", action='store_true', default=False)
+    parser.add_argument("--sample-estimation", action='store_true', default=False)
     parser.add_argument("--global_config", default="configs/global.yaml")
     args = parser.parse_args()
 

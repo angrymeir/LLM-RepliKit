@@ -54,9 +54,9 @@ RUN apt-get install -y openjdk-11-jdk
 # ------------------------
 # Go 1.20
 # ------------------------
-RUN wget https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz && \
-    tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz && \
-    rm go${GO_VERSION}.linux-amd64.tar.gz
+RUN wget https://go.dev/dl/go${GO_VERSION}.linux-arm64.tar.gz && \
+    tar -C /usr/local -xzf go${GO_VERSION}.linux-arm64.tar.gz && \
+    rm go${GO_VERSION}.linux-arm64.tar.gz
 
 # ------------------------
 # Rust 1.73
@@ -75,6 +75,15 @@ RUN wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-p
 
 RUN wget https://raw.githubusercontent.com/Intelligent-CAT-Lab/PLTranslationEmpirical/refs/heads/main/requirements.txt
 RUN pip3 install -r requirements.txt
+
+
+COPY ./replicationpackage /replicationpackage
+
+RUN wget https://zenodo.org/records/10447705/files/dataset.zip?download=1 -O dataset.zip
+RUN unzip dataset.zip -d /replicationpackage/
+RUN rm dataset.zip
+
+COPY entrypoint.sh /replicationpackage/
 
 # Default shell
 CMD ["/bin/bash"]

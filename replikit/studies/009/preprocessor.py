@@ -2,6 +2,8 @@ from typing import Any
 from base.preprocessor import StudyPreprocessor
 import os
 import shutil
+from git import Repo
+import docker
 
 class Preprocessor(StudyPreprocessor):
     
@@ -15,24 +17,49 @@ class Preprocessor(StudyPreprocessor):
 
     def magic(self):
         self._download_source_files(self.config['source_files'])
-        print("Preprocessing everthing...")
+        self._preprocess_source_files()
+        self._prepare_environment("")
+        print("Preprocessing everything...")
 
     def _load_data(self, reference: Any) -> Any:
         pass
 
     def _process_data(self, data: Any) -> Any:
-        return super()._process_data(data)
+        pass
     
     def _download_source_files(self, reference: Any) -> Any:
         if self.reset:
             shutil.rmtree(self.repl_package_path)
         if not os.path.exists(self.repl_package_path):
             os.makedirs(self.repl_package_path)
+            Repo.clone_from(reference, self.repl_package_path)
 
-        # TODO: download the source files from the reference URL
+    def _preprocess_source_files(self) -> Any:
+        # create .env file
+        env_file = self.repl_package_path / ".env"
+        with open(env_file, 'w') as f:
+            f.write("OPENAI_API_KEY={}".format(os.getenv("OPENAI_API_KEY")))
+        
+        # change gpt model
+        with open(self.repl_package_path / "src/translation/translate_gpt4.py", 'r') as f:
+            content = f.read()
 
-    def _preprocess_source_files(self, source_files: Any) -> Any:
-        pass
+        new_content = content.replace('model="gpt-4"', 'model="gpt-4o-mini"')
+        with open(self.repl_package_path / "src/translation/translate_gpt4.py", 'w') as f:
+            f.write(new_content)
     
     def _prepare_environment(self, environment: Any) -> None:
-        pass
+        print("Building docker image...")
+        client = docker.from_env()
+
+        dockerfile_path = str(self.study_dir)
+
+        try:
+            if self.config.get('reset', False):
+                client.images.build(path=dockerfile_path, tag="009:latest", nocache=True)
+                print("Docker image built successfully!")
+        except docker.errors.BuildError as e:
+            print("Build failed:", e)
+        except Exception as e:
+            print("Error:", e)
+        print("Docker image built successfully!")
