@@ -8,3 +8,13 @@ study:
         runner_module: "001.runner"
         postprocessor_module: "001.postprocessor"
         significant_sample_size: 40
+    "009":
+        description: "Lost in Translation: A Study of Bugs Introduced by Large Language Models while Translating Code"
+        preprocessor_module: "009.preprocessor"
+        runner_module: "009.runner"
+        postprocessor_module: "009.postprocessor"
+        significant_sample_size: 40
+        source_dir: "replicationpackage"
+        source_files: "https://github.com/Intelligent-CAT-Lab/PLTranslationEmpirical.git"
+        data_files: "https://zenodo.org/records/10447705/files/dataset.zip?download=1"
+        docker_image_name: "009:latest"
