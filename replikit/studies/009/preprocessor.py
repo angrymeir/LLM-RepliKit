@@ -40,13 +40,6 @@ class Preprocessor(StudyPreprocessor):
         with open(env_file, 'w') as f:
             f.write("OPENAI_API_KEY={}".format(os.getenv("OPENAI_API_KEY")))
         
-        # change gpt model
-        with open(self.repl_package_path / "src/translation/translate_gpt4.py", 'r') as f:
-            content = f.read()
-
-        new_content = content.replace('model="gpt-4"', 'model="gpt-4o-mini"')
-        with open(self.repl_package_path / "src/translation/translate_gpt4.py", 'w') as f:
-            f.write(new_content)
     
     def _prepare_environment(self, environment: Any) -> None:
         print("Building docker image...")
@@ -62,4 +55,4 @@ class Preprocessor(StudyPreprocessor):
             print("Build failed:", e)
         except Exception as e:
             print("Error:", e)
-        print("Docker image built successfully!")
+        print("Docker image built successfully!")  
