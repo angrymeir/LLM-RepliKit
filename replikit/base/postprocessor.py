@@ -1,3 +1,5 @@
+import numpy as np
+import seaborn as sns
 from typing import Any
 
 class StudyPostprocessor:
@@ -31,7 +33,48 @@ class StudyPostprocessor:
         including evidence aggregation, structuring, analysis, and report generation.
         """
         raise NotImplementedError("This method should be overridden by subclasses")
-    
+
+    def _calculate_quantils(self, results: list, quantiles=[0.05,0.1,0.25,0.5,0.75,0.9,0.95]) -> list:
+        """
+        Estimate posterior quantiles from the given results using the Bayesian bootstrap.
+        
+        Args:
+            results (list): List of numeric results from the study.
+            quantiles (list, optional): List of quantile levels to compute. Defaults to [0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95].
+        
+        Returns:
+            tuple: A tuple where the first element is the list of quantiles,
+                   and the second is a dictionary mapping each quantile to its estimated posterior samples.
+        """
+        if type(results) != np.array:
+            results = np.array(results)
+        n = len(results)
+        n_samples = 10000
+
+        posterior_quantiles = {q: [] for q in quantiles}
+        for _ in range(n_samples):
+            weights = np.random.dirichlet(np.ones(n))
+            sorted_idx = np.argsort(results)
+            sorted_vals = results[sorted_idx]
+            sorted_weights = weights[sorted_idx]
+            cum_weights = np.cumsum(sorted_weights)
+            for q in quantiles:
+                idx = np.searchsorted(cum_weights, q)
+                posterior_quantiles[q].append(sorted_vals[min(idx, n-1)])
+        return quantiles, posterior_quantiles
+
+    def _plot_distribution(self, results: list, file_path: str) -> None:
+        """
+        Generate and save a histogram plot of the result distribution.
+
+        Args:
+            results (list): List of numerical results to be plotted.
+            file_path (str): File path where the plot will be saved.
+        """
+        plot = sns.displot(results, bins=100, label='Distribution')
+        plot.figure.savefig(file_path)
+
+
     def _configure(self) -> None:
         """
         Configure the postprocessor using the provided configuration.

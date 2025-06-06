@@ -53,22 +53,10 @@ class PostProcessor(StudyPostprocessor):
             for lang, accuracies in data.items():
                 language_accuracies[lang].append(np.mean(accuracies))
 
-        observed_precisions = np.array(language_accuracies['Python'])
-        quantiles = [0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95]
-        n = len(observed_precisions)
-        n_samples = 10000
+        quantiles, posterior_quantiles = self._calculate_quantils(language_accuracies['Python'])
 
-        posterior_quantiles = {q: [] for q in quantiles}
-        for _ in range(n_samples):
-            weights = np.random.dirichlet(np.ones(n))
-            sorted_idx = np.argsort(observed_precisions)
-            sorted_vals = observed_precisions[sorted_idx]
-            sorted_weights = weights[sorted_idx]
-            cum_weights = np.cumsum(sorted_weights)
-            for q in quantiles:
-                idx = np.searchsorted(cum_weights, q)
-                posterior_quantiles[q].append(sorted_vals[min(idx, n-1)])
-
+        self._plot_distribution(language_accuracies['Python'], os.path.join(evidence_dir, 'distribution.png'))
+        
         # Write report
         with open(os.path.join(evidence_dir, 'report.txt'), 'w') as report:
             report.write("# Average accuracies across all studies:\n")
