@@ -1,0 +1,25 @@
+Total Instances: 200
+
+Total Correct: 167
+Total Runtime Failed: 0
+Total Compilation Failed: 7
+Total Test Failed: 26
+Total Infinite Loop: 0
+
+Accuracy: 83.5
+Runtime Rate: 0.0
+Compilation Rate: 3.5000000000000004
+Test Failed Rate: 13.0
+Infinite Loop Rate: 0.0
+
+=================================================================================================
+Failed Test Files: ['s975943078.c', 's804484425.c', 's913338871.c', 's747093551.c', 's592421258.c', 's269975433.c', 's951065247.c', 's681170949.c', 's430322735.c', 's001486412.c', 's554393427.c', 's676839884.c', 's016605598.c', 's951169509.c', 's828550015.c', 's043545989.c', 's621701371.c', 's238775098.c', 's039768540.c', 's735480710.c', 's086522214.c', 's233116196.c', 's344468705.c', 's668439281.c', 's287369394.c', 's124725275.c'] 
+Failed Test Details: ['Filename: s233116196.c Actual: 1\n Generated: ', 'Filename: s913338871.c Actual: 10\n Generated: 5\n', 'Filename: s086522214.c Actual: Heisei\n Generated: ', 'Filename: s124725275.c Actual: 1\n Generated: ', 'Filename: s043545989.c Actual: Yes\n Generated: No\n', 'Filename: s681170949.c Actual: ABC100\n Generated: Enter string: ABC100\n', 'Filename: s747093551.c Actual: No War\n Generated: War\n', 'Filename: s344468705.c Actual: 2\n Generated: 1\n3\n3\n3\n3\n', 'Filename: s039768540.c Actual: ai1333\n Generated: ai13333', 'Filename: s001486412.c Actual: 7.5\n Generated: 7.500000\n', 'Filename: s951065247.c Actual: 23\n Generated: -2147483639\n', 'Filename: s951169509.c Actual: 4\n Generated: ', 'Filename: s975943078.c Actual: 4\n Generated: 0\n', 'Filename: s430322735.c Actual: 1\n Generated: 4\n', 'Filename: s016605598.c Actual: 4 2\n1 -3\n Generated: 6\n-11\n', 'Filename: s804484425.c Actual: 26\n Generated: 19\n', 'Filename: s269975433.c Actual: 110\n Generated: 0\n', 'Filename: s238775098.c Actual: 48000.0\n Generated: 48000.000000\n', 'Filename: s287369394.c Actual: 9\n Generated: 6\n', 'Filename: s554393427.c Actual: 48000.0\n Generated: 48000.0000000000\n', 'Filename: s621701371.c Actual: cpa\n Generated: a\n', 'Filename: s676839884.c Actual: Yes\n Generated: No\n', 'Filename: s828550015.c Actual: 12\n Generated: 11\n', 'Filename: s592421258.c Actual: Yes\n Generated: No\n', 'Filename: s735480710.c Actual: 4 2 1 3\n Generated: 1 3 2 4', 'Filename: s668439281.c Actual: beet\nvet\n Generated: vet\nbeet\n'] 
+=================================================================================================
+Runtime Error Files: [] 
+Runtime Error Details: [] 
+=================================================================================================
+Compilation Error Files: ['s681105182.c', 's663509070.c', 's538657784.c', 's534639230.c', 's591424993.c', 's662673721.c', 's840967243.c'] 
+=================================================================================================
+Infinite Loop Files: [] 
+=================================================================================================

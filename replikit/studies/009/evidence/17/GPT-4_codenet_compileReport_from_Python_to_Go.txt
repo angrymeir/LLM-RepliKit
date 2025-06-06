@@ -1,0 +1,25 @@
+Total Instances: 200
+
+Total Correct: 169
+Total Runtime Failed: 1
+Total Compilation Failed: 16
+Total Test Failed: 14
+Total Infinite Loop: 0
+
+Accuracy: 84.5
+Runtime Rate: 0.5
+Compilation Rate: 8.0
+Test Failed Rate: 7.000000000000001
+Infinite Loop Rate: 0.0
+
+=================================================================================================
+Failed Test Files: ['s554393427.go', 's893778513.go', 's103029464.go', 's763208424.go', 's238775098.go', 's287369394.go', 's344468705.go', 's875904659.go', 's960572618.go', 's913338871.go', 's749244504.go', 's977408144.go', 's273727373.go', 's147181072.go'] 
+Failed Test Details: ['Filename: s763208424.go Actual: 9\n Generated: 21\n', 'Filename: s273727373.go Actual: 3 1 2\n Generated: [3 1 2]\n', 'Filename: s344468705.go Actual: 2\n Generated: 1\n5\n0\n0\n0\n', 'Filename: s977408144.go Actual: axxcxxdxx\n Generated: [axx cxx dxx]\n', 'Filename: s103029464.go Actual: 1\n1\n Generated: 1\n[1]\n', 'Filename: s749244504.go Actual: 12\n Generated: 81\n', 'Filename: s960572618.go Actual: Yes\n Generated: No\n', 'Filename: s893778513.go Actual: Yes\n Generated: No\n', 'Filename: s287369394.go Actual: 9\n Generated: 6\n', 'Filename: s238775098.go Actual: 48000.0\n Generated: 48000\n', 'Filename: s147181072.go Actual: Fair, later, occasionally cloudy.\n Generated: Fair,\n', 'Filename: s875904659.go Actual: D2 C3 H4 S4 C9\nStable\nD2 C3 S4 H4 C9\nNot stable\n Generated: H4\nStable\nH4\nStable\n', 'Filename: s554393427.go Actual: 48000.0\n Generated: 48000\n', 'Filename: s913338871.go Actual: 10\n Generated: 5\n'] 
+=================================================================================================
+Runtime Error Files: ['s016605598.go'] 
+Runtime Error Details: ['Filename: s016605598.go Error_type: panic: runtime error: index out of range [0] with length 0\n\ngoroutine 1 [running]:\nmain.MaxHeap.Swap(...)\n\t/replicationpackage/output/GPT-4/codenet/Python/Go/s016605598.go:13\ncontainer/heap.Pop({0xd8de0, 0x400000c030})\n\t/usr/local/go/src/container/heap/heap.go:61 +0x48\nmain.main()\n\t/replicationpackage/output/GPT-4/codenet/Python/Go/s016605598.go:85 +0x40c\n'] 
+=================================================================================================
+Compilation Error Files: ['s137613418.go', 's621701371.go', 's764169243.go', 's826716211.go', 's664563518.go', 's770408311.go', 's259116349.go', 's975943078.go', 's759499751.go', 's537584449.go', 's790754864.go', 's225615697.go', 's986062252.go', 's174910557.go', 's817205687.go', 's039768540.go'] 
+=================================================================================================
+Infinite Loop Files: [] 
+=================================================================================================

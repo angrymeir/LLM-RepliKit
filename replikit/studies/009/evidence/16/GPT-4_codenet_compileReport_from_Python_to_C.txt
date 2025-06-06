@@ -1,0 +1,25 @@
+Total Instances: 200
+
+Total Correct: 173
+Total Runtime Failed: 0
+Total Compilation Failed: 9
+Total Test Failed: 17
+Total Infinite Loop: 1
+
+Accuracy: 86.5
+Runtime Rate: 0.0
+Compilation Rate: 4.5
+Test Failed Rate: 8.5
+Infinite Loop Rate: 0.5
+
+=================================================================================================
+Failed Test Files: ['s621701371.c', 's676839884.c', 's681170949.c', 's344468705.c', 's913338871.c', 's016605598.c', 's001486412.c', 's908812767.c', 's031917494.c', 's554393427.c', 's747093551.c', 's975943078.c', 's086522214.c', 's828550015.c', 's287369394.c', 's238775098.c', 's951065247.c'] 
+Failed Test Details: ['Filename: s287369394.c Actual: 9\n Generated: 6\n', 'Filename: s676839884.c Actual: Yes\n Generated: No\n', 'Filename: s908812767.c Actual: 0\n0\n1\n Generated: No\n', 'Filename: s975943078.c Actual: 4\n Generated: ', 'Filename: s554393427.c Actual: 48000.0\n Generated: 48000.000000\n', 'Filename: s016605598.c Actual: 4 2\n1 -3\n Generated: 4 2\n-2147483648 -9\n', 'Filename: s621701371.c Actual: cpa\n Generated: ap\n', 'Filename: s001486412.c Actual: 7.5\n Generated: 7.500000\n', 'Filename: s086522214.c Actual: Heisei\n Generated: ', 'Filename: s344468705.c Actual: 2\n Generated: 1\n3\n3\n3\n3\n', 'Filename: s031917494.c Actual: Christmas\n Generated: Enter a number: Christmas\n', 'Filename: s747093551.c Actual: No War\n Generated: War\n', 'Filename: s951065247.c Actual: 23\n Generated: -2147483639\n', 'Filename: s913338871.c Actual: 10\n Generated: 5\n', 'Filename: s681170949.c Actual: ABC100\n Generated: Enter a string: ABC100\n', 'Filename: s238775098.c Actual: 48000.0\n Generated: 48000\n', 'Filename: s828550015.c Actual: 12\n Generated: 11\n'] 
+=================================================================================================
+Runtime Error Files: [] 
+Runtime Error Details: [] 
+=================================================================================================
+Compilation Error Files: ['s957164965.c', 's662673721.c', 's124725275.c', 's534639230.c', 's681105182.c', 's538657784.c', 's591424993.c', 's790754864.c', 's663509070.c'] 
+=================================================================================================
+Infinite Loop Files: ['s259116349.c'] 
+=================================================================================================

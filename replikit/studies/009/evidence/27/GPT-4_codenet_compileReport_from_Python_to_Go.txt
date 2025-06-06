@@ -1,0 +1,25 @@
+Total Instances: 200
+
+Total Correct: 163
+Total Runtime Failed: 1
+Total Compilation Failed: 23
+Total Test Failed: 12
+Total Infinite Loop: 1
+
+Accuracy: 81.5
+Runtime Rate: 0.5
+Compilation Rate: 11.5
+Test Failed Rate: 6.0
+Infinite Loop Rate: 0.5
+
+=================================================================================================
+Failed Test Files: ['s147181072.go', 's554393427.go', 's763208424.go', 's287369394.go', 's875904659.go', 's960572618.go', 's977408144.go', 's621701371.go', 's238775098.go', 's735480710.go', 's007458552.go', 's913338871.go'] 
+Failed Test Details: ['Filename: s977408144.go Actual: axxcxxdxx\n Generated: axx cxx dxx\n', 'Filename: s875904659.go Actual: D2 C3 H4 S4 C9\nStable\nD2 C3 S4 H4 C9\nNot stable\n Generated: H4\nStable\nH4\nStable\n', 'Filename: s960572618.go Actual: Yes\n Generated: No\n', 'Filename: s735480710.go Actual: 4 2 1 3\n Generated: 2 4 1 3\n', 'Filename: s763208424.go Actual: 9\n Generated: 21\n', 'Filename: s238775098.go Actual: 48000.0\n Generated: 48000\n', 'Filename: s621701371.go Actual: cpa\n Generated: a\n', 'Filename: s913338871.go Actual: 10\n Generated: 5\n', 'Filename: s554393427.go Actual: 48000.0\n Generated: 48000\n', 'Filename: s007458552.go Actual: Yes\n Generated: No\n', 'Filename: s287369394.go Actual: 9\n Generated: 6\n', 'Filename: s147181072.go Actual: Fair, later, occasionally cloudy.\n Generated: Fair,\n'] 
+=================================================================================================
+Runtime Error Files: ['s199418121.go'] 
+Runtime Error Details: ['Filename: s199418121.go Error_type: panic: runtime error: index out of range [1] with length 1\n\ngoroutine 1 [running]:\nmain.main()\n\t/replicationpackage/output/GPT-4/codenet/Python/Go/s199418121.go:15 +0x15c\n'] 
+=================================================================================================
+Compilation Error Files: ['s504709360.go', 's174910557.go', 's137613418.go', 's240532461.go', 's817205687.go', 's225615697.go', 's840967243.go', 's462546732.go', 's016605598.go', 's986062252.go', 's269975433.go', 's749244504.go', 's537584449.go', 's790754864.go', 's344468705.go', 's951065247.go', 's681105182.go', 's668439281.go', 's430322735.go', 's039768540.go', 's043545989.go', 's067092519.go', 's826716211.go'] 
+=================================================================================================
+Infinite Loop Files: ['s259116349.go'] 
+=================================================================================================

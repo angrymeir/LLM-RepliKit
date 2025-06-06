@@ -1,0 +1,74 @@
+# Average accuracies across all studies:
+Python: 42.94
+
+# Posterior Percentiles
+Posterior 5th percentile: 0.0000
+Posterior 10th percentile: 0.0354
+Posterior 25th percentile: 11.5249
+Posterior 50th percentile: 61.4499
+Posterior 75th percentile: 64.5298
+Posterior 90th percentile: 64.9903
+Posterior 95th percentile: 65.2767
+
+
+# Detailed results per experiment run:
+Repetition: 20
+Python: 88.0, 0.0, 93.5, 82.5
+Repetition: 18
+Python: 86.0, 0.0, 92.5, 81.0
+Repetition: 27
+Python: 83.5, 0.0, 91.5, 81.5
+Repetition: 9
+Python: 0.0, 0.0, 0.0, 0.0
+Repetition: 0
+Python: 0.0, 0.0, 92.5, 0.0
+Repetition: 11
+Python: 85.0, 0.0, 91.0, 78.0
+Repetition: 7
+Python: 0.0, 0.0, 0.0, 0.0
+Repetition: 29
+Python: 85.5, 0.0, 92.0, 81.0
+Repetition: 16
+Python: 86.5, 0.0, 93.0, 81.0
+Repetition: 6
+Python: 0.0, 0.0, 0.0, 0.0
+Repetition: 28
+Python: 86.0, 0.0, 92.0, 78.5
+Repetition: 17
+Python: 85.5, 0.0, 89.5, 84.5
+Repetition: 1
+Python: 0.0, 0.0, 0.0, 0.0
+Repetition: 10
+Python: 83.5, 0.0, 0.0, 80.5
+Repetition: 19
+Python: 84.5, 0.0, 93.0, 81.0
+Repetition: 26
+Python: 83.5, 0.0, 91.5, 80.0
+Repetition: 8
+Python: 0.0, 0.0, 0.0, 0.0
+Repetition: 21
+Python: 84.0, 0.0, 93.0, 78.0
+Repetition: 24
+Python: 83.5, 0.0, 92.5, 81.5
+Repetition: 23
+Python: 85.0, 0.0, 93.0, 81.0
+Repetition: 4
+Python: 0.0, 0.0, 0.0, 0.0
+Repetition: 15
+Python: 85.0, 0.0, 93.0, 77.0
+Repetition: 3
+Python: 0.0, 0.0, 0.0, 0.0
+Repetition: 12
+Python: 86.0, 0.0, 94.0, 80.5
+Repetition: 2
+Python: 0.0, 0.0, 0.0, 0.0
+Repetition: 13
+Python: 85.0, 0.0, 91.5, 79.0
+Repetition: 5
+Python: 0.0, 0.0, 0.0, 0.0
+Repetition: 14
+Python: 82.5, 0.0, 93.0, 81.5
+Repetition: 22
+Python: 86.0, 0.0, 92.0, 79.5
+Repetition: 25
+Python: 85.5, 0.0, 93.0, 78.5

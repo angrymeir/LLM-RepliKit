@@ -1,0 +1,25 @@
+Total Instances: 200
+
+Total Correct: 186
+Total Runtime Failed: 3
+Total Compilation Failed: 4
+Total Test Failed: 7
+Total Infinite Loop: 0
+
+Accuracy: 93.0
+Runtime Rate: 1.5
+Compilation Rate: 2.0
+Test Failed Rate: 3.5000000000000004
+Infinite Loop Rate: 0.0
+
+=================================================================================================
+Failed Test Files: ['s016605598.java', 's147181072.java', 's287369394.java', 's749244504.java', 's430322735.java', 's913338871.java', 's951065247.java'] 
+Failed Test Details: ['Filename: s147181072.java Actual: Fair, later, occasionally cloudy.\n Generated: FAIR, LATER, OCCASIONALLY CLOUDY.\n', 'Filename: s749244504.java Actual: 12\n Generated: 18\n', 'Filename: s287369394.java Actual: 9\n Generated: 6\n', 'Filename: s951065247.java Actual: 23\n Generated: -2147483639\n', 'Filename: s913338871.java Actual: 10\n Generated: 0\n', 'Filename: s430322735.java Actual: 1\n Generated: 4\n', 'Filename: s016605598.java Actual: 4 2\n1 -3\n Generated: 6\n-2\n'] 
+=================================================================================================
+Runtime Error Files: ['s087080706.java', 's592421258.java', 's344468705.java'] 
+Runtime Error Details: ['Filename: s087080706.java Error_type: Exception in thread "main" java.util.NoSuchElementException\n\tat java.base/java.util.Scanner.throwFor(Scanner.java:937)\n\tat java.base/java.util.Scanner.next(Scanner.java:1594)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2258)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2212)\n\tat s087080706.main(s087080706.java:15)\n', 'Filename: s344468705.java Error_type: Exception in thread "main" java.util.NoSuchElementException\n\tat java.base/java.util.Scanner.throwFor(Scanner.java:937)\n\tat java.base/java.util.Scanner.next(Scanner.java:1594)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2258)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2212)\n\tat s344468705.solve(s344468705.java:10)\n\tat s344468705.main(s344468705.java:34)\n', 'Filename: s592421258.java Error_type: Exception in thread "main" java.util.InputMismatchException\n\tat java.base/java.util.Scanner.throwFor(Scanner.java:939)\n\tat java.base/java.util.Scanner.next(Scanner.java:1594)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2258)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2212)\n\tat s592421258.main(s592421258.java:7)\n'] 
+=================================================================================================
+Compilation Error Files: ['s681105182.java', 's906994739.java', 's817205687.java', 's828550015.java'] 
+=================================================================================================
+Infinite Loop Files: [] 
+=================================================================================================

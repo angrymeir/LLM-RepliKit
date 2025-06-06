@@ -1,0 +1,25 @@
+Total Instances: 200
+
+Total Correct: 172
+Total Runtime Failed: 1
+Total Compilation Failed: 5
+Total Test Failed: 21
+Total Infinite Loop: 1
+
+Accuracy: 86.0
+Runtime Rate: 0.5
+Compilation Rate: 2.5
+Test Failed Rate: 10.5
+Infinite Loop Rate: 0.5
+
+=================================================================================================
+Failed Test Files: ['s344468705.c', 's975943078.c', 's001486412.c', 's016605598.c', 's763208424.c', 's031917494.c', 's875904659.c', 's251858505.c', 's287369394.c', 's430322735.c', 's534639230.c', 's592421258.c', 's681105182.c', 's951169509.c', 's554393427.c', 's225615697.c', 's137613418.c', 's238775098.c', 's951065247.c', 's828550015.c', 's913338871.c'] 
+Failed Test Details: ['Filename: s534639230.c Actual: 2\n Generated: 0\n', 'Filename: s137613418.c Actual: YES\n Generated: NO\n', 'Filename: s225615697.c Actual: 4 0 4\n Generated: 2 4 0 4\n', 'Filename: s031917494.c Actual: Christmas\n Generated: Enter a number: Christmas\n', 'Filename: s430322735.c Actual: 1\n Generated: ', 'Filename: s913338871.c Actual: 10\n Generated: 5\n', 'Filename: s975943078.c Actual: 4\n Generated: ', 'Filename: s238775098.c Actual: 48000.0\n Generated: 48000\n', 'Filename: s875904659.c Actual: D2 C3 H4 S4 C9\nStable\nD2 C3 S4 H4 C9\nNot stable\n Generated: ', 'Filename: s344468705.c Actual: 2\n Generated: 1\n3\n3\n3\n3\n', 'Filename: s592421258.c Actual: Yes\n Generated: No\n', 'Filename: s016605598.c Actual: 4 2\n1 -3\n Generated: 4 2\n0 4294967277\n', 'Filename: s828550015.c Actual: 12\n Generated: 11\n', 'Filename: s951065247.c Actual: 23\n Generated: -2147483639\n', 'Filename: s287369394.c Actual: 9\n Generated: 6\n', 'Filename: s554393427.c Actual: 48000.0\n Generated: 48000.000000\n', 'Filename: s951169509.c Actual: 4\n Generated: ', 'Filename: s001486412.c Actual: 7.5\n Generated: 7.500000\n', 'Filename: s251858505.c Actual: 2\n Generated: 3\n', 'Filename: s763208424.c Actual: 9\n Generated: 21\n', 'Filename: s681105182.c Actual: 11 6\n Generated: 11 4\n'] 
+=================================================================================================
+Runtime Error Files: ['s546174362.c'] 
+Runtime Error Details: ['Filename: s546174362.c Error_type: free(): invalid size\n'] 
+=================================================================================================
+Compilation Error Files: ['s538657784.c', 's289483518.c', 's840967243.c', 's663509070.c', 's662673721.c'] 
+=================================================================================================
+Infinite Loop Files: ['s259116349.c'] 
+=================================================================================================
