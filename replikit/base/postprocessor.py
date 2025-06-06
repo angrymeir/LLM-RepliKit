@@ -25,12 +25,15 @@ class StudyPostprocessor:
         self.config = config
         self._configure()
 
-    def postprocess(self) -> None:
+    def postprocess(self, statistics_only: bool) -> None:
         """
         Execute the postprocessing of the study.
 
         This method should orchestrate the entire postprocessing workflow,
         including evidence aggregation, structuring, analysis, and report generation.
+
+        Args:
+            statistics_only (bool): Whether to perform changes or only compute statistics.
         """
         raise NotImplementedError("This method should be overridden by subclasses")
 

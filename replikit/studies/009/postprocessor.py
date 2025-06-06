@@ -13,7 +13,7 @@ class PostProcessor(StudyPostprocessor):
     def _configure(self):
         pass
 
-    def postprocess(self):
+    def postprocess(self, statistics_only):
         parent_dir = os.path.dirname(os.path.abspath(__file__))
         evidence_dir = os.path.join(parent_dir, 'evidence')
 

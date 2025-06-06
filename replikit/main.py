@@ -83,7 +83,7 @@ def run(study: str, test: int, global_config: Dict[str, Any]) -> None:
             runner.run(i)
             runner.save_evidence(i)
 
-def postprocess(study: str, global_config: Dict[str, Any]) -> None:
+def postprocess(study: str, global_config: Dict[str, Any], statistics_only: bool) -> None:
     """
     Postprocess the evidence of the study replication package and generates a report.
 
@@ -92,20 +92,23 @@ def postprocess(study: str, global_config: Dict[str, Any]) -> None:
     Args:
         study (str): The name of the study.
         global_config (Dict[str, Any]): Global configuration dictionary.
+        no_execution (bool): Whether to perform changes or only compute statistics.
     """
     study_config = global_config['study'][study]
     post_class = load_class(global_config['study_dir'] + "." + study_config['postprocessor_module'], "PostProcessor")
     postprocessor = post_class(study_config)
-    postprocessor.postprocess()
+    postprocessor.postprocess(statistics_only)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--study", required=True)
     parser.add_argument("--test", default=0, type=int)
+    parser.add_argument("--no_execution", action='store_true')
     parser.add_argument("--global_config", default="configs/global.yaml")
     args = parser.parse_args()
 
     global_config: Dict[str, Any] = load_yaml(args.global_config)
-    prepare(args.study, global_config)
-    run(args.study, args.test, global_config)
-    postprocess(args.study, global_config)
+    if not args.no_execution:
+        prepare(args.study, global_config)
+        run(args.study, args.test, global_config)
+    postprocess(args.study, global_config, args.no_execution)
