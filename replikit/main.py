@@ -59,31 +59,29 @@ def prepare(study: str, global_config: Dict[str, Any]) -> bool:
     status = preprocessor.magic()
     return status
 
-def run(study: str, sample_estimation: bool, global_config: Dict[str, Any]) -> None:
+def run(study: str, test: int, global_config: Dict[str, Any]) -> None:
     """
     Run the study replication package.
 
-    Either executes the replication package to estimate the required sample size or runs the replication package for a given sample size.
+    Either executes the replication package to test if everything works as expected or runs the replication package for a given sample size.
 
     Args:
         study (str): The name of the study.
-        sample_estimation (bool): Whether to run the replication package to estaimte the required sample size for a significant result.
+        test (int): Whether to run the replication package to test if it works.
         global_config (Dict[str, Any]): Global configuration dictionary.
     """
     
     study_config = global_config['study'][study]
     runner = load_class(global_config['study_dir'] + "." + study_config['runner_module'], "Runner")
     runner = runner(study_config)
-    if sample_estimation:
-        for i in range(global_config['sample_estimation']):
+    if test:
+        for i in range(test):
             runner.run(i)
             runner.save_evidence(i)
-            break #TODO: Remove
     else:
         for i in range(study_config['significant_sample_size']):
             runner.run(i)
             runner.save_evidence(i)
-            break #TODO: Remove
 
 def postprocess(study: str, global_config: Dict[str, Any]) -> None:
     """
@@ -103,11 +101,11 @@ def postprocess(study: str, global_config: Dict[str, Any]) -> None:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--study", required=True)
-    parser.add_argument("--sample-estimation", action='store_true', default=False)
+    parser.add_argument("--test", default=0, type=int)
     parser.add_argument("--global_config", default="configs/global.yaml")
     args = parser.parse_args()
 
     global_config: Dict[str, Any] = load_yaml(args.global_config)
     prepare(args.study, global_config)
-    run(args.study, args.sample_estimation, global_config)
+    run(args.study, args.test, global_config)
     postprocess(args.study, global_config)
