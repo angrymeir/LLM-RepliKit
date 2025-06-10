@@ -16,7 +16,7 @@ class PostProcessor(StudyPostprocessor):
     def postprocess(self):
         parent_dir = os.path.dirname(os.path.abspath(__file__))
         evidence_dir = os.path.join(parent_dir, 'evidence')
-
+        # TODO use another dataframe structure to store the results
         combined_results = { # all dfs need also a "type" column and run number column
             "dfa": pd.DataFrame(columns=["type", "run_number","DFA-EQ@1", "DFA-EQ@3", "DFA-EQ@10"]),
             "em": pd.DataFrame(columns=["type", "run_number","EM"]),
@@ -147,7 +147,7 @@ class PostProcessor(StudyPostprocessor):
             for key, df in combined_results.items():
                 if not df.empty:
                     df.to_csv(os.path.join(evidence_dir, f"{key}_combined_results.csv"), index=False)
-                    averages = df.groupby("type").mean(numeric_only=True).to_dict(orient="index")
+                    averages = df.groupby("type", as_index=False).mean() # TODO need to verify this output
                     report_file.write(f"{key} Averages:\n")
                     for k, v in averages.items():
                         report_file.write(f"{k}: {v}\n")
