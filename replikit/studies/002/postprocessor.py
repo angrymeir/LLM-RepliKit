@@ -2,8 +2,6 @@ import ast
 from base.postprocessor import StudyPostprocessor
 import os
 import re
-import numpy as np
-from collections import defaultdict
 import pandas as pd
 
 class PostProcessor(StudyPostprocessor):
@@ -57,8 +55,8 @@ class PostProcessor(StudyPostprocessor):
                             "DFA-EQ@3": float(m.group('eq3')),
                             "DFA-EQ@10": float(m.group('eq10'))
                         }
-                        result['dfa'] = result['dfa'].append(dict_row, ignore_index=True)
-                        combined_results['dfa'] = combined_results['dfa'].append(dict_row, ignore_index=True)
+                        result['dfa'] = pd.concat([result['dfa'], pd.DataFrame([dict_row])], ignore_index=True)
+                        combined_results['dfa'] = pd.concat([combined_results['dfa'], pd.DataFrame([dict_row])], ignore_index=True)
                         
                 file_path = os.path.join(dir_path, 'em_eval.txt')
                 with open(file_path, 'r') as f:
@@ -66,11 +64,16 @@ class PostProcessor(StudyPostprocessor):
                     pattern = re.compile(r'GPT3\.5_([\w]+)_Output\n([\d.]+)', re.MULTILINE)
                     matches = pattern.findall(content)
                     for type, score in matches:
-                        combined_results['em'] = combined_results['em'].append({
+                        result['em'] = pd.concat([result['em'], pd.DataFrame([{
                             "type": type,
                             "run_number": dir_name,
                             "EM": float(score)
-                        }, ignore_index=True)
+                        }])], ignore_index=True)
+                        combined_results['em'] = pd.concat([combined_results['em'], pd.DataFrame([{
+                            "type": type,
+                            "run_number": dir_name,
+                            "EM": float(score)
+                        }])], ignore_index=True)
                 file_path = os.path.join(dir_path, 'pass_at_k.txt')
                 with open(file_path, 'r') as f:
                 # first one is raw secon refined type always, parse as dict
@@ -89,8 +92,8 @@ class PostProcessor(StudyPostprocessor):
                             "pass_at_3": d.get('pass@3'),
                             "pass_at_10": d.get('pass@10')
                         }
-                        result['pass_at_k'] = result['pass_at_k'].append(dict_row, ignore_index=True)
-                        combined_results['pass_at_k'] = combined_results['pass_at_k'].append(dict_row, ignore_index=True)
+                        result['pass_at_k'] = pd.concat([result['pass_at_k'], pd.DataFrame([dict_row])], ignore_index=True)
+                        combined_results['pass_at_k'] = pd.concat([combined_results['pass_at_k'], pd.DataFrame([dict_row])], ignore_index=True)
                 file_path = os.path.join(dir_path, 'rescure_analysis.txt')
                 with open(file_path, 'r') as f:
                     lines = f.readlines()
@@ -110,8 +113,8 @@ class PostProcessor(StudyPostprocessor):
                                 "vul@3_rescue": d.get('pass@5'),
                                 "vul@10_rescue": d.get('pass@10')
                             }
-                            result['vul_rescue'] = result['vul_rescue'].append(dict_row, ignore_index=True)
-                            combined_results['vul_rescue'] = combined_results['vul_rescue'].append(dict_row, ignore_index=True)
+                            result['vul_rescue'] = pd.concat([result['vul_rescue'], pd.DataFrame([dict_row])], ignore_index=True)
+                            combined_results['vul_rescue'] = pd.concat([combined_results['vul_rescue'], pd.DataFrame([dict_row])], ignore_index=True)
                 file_path = os.path.join(dir_path, 'redoshunter_analysis.txt')
                 with open(file_path, 'r') as f:
                     lines = f.readlines()
@@ -131,8 +134,8 @@ class PostProcessor(StudyPostprocessor):
                                 "vul@3_redos": d.get('pass@3'),
                                 "vul@10_redos": d.get('pass@10')
                             }
-                            result['vul_redos_hunter'] = result['vul_redos_hunter'].append(dict_row, ignore_index=True)
-                            combined_results['vul_redos_hunter'] = combined_results['vul_redos_hunter'].append(dict_row, ignore_index=True)
+                            result['vul_redos_hunter'] = pd.concat([result['vul_redos_hunter'], pd.DataFrame([dict_row])], ignore_index=True)
+                            combined_results['vul_redos_hunter'] = pd.concat([combined_results['vul_redos_hunter'], pd.DataFrame([dict_row])], ignore_index=True)
             for key, df in result.items():
                 if not df.empty:
                     df.to_csv(os.path.join(dir_path, f"{key}_results.csv"), index=False)
@@ -144,7 +147,7 @@ class PostProcessor(StudyPostprocessor):
             for key, df in combined_results.items():
                 if not df.empty:
                     df.to_csv(os.path.join(evidence_dir, f"{key}_combined_results.csv"), index=False)
-                    averages = df.mean(numeric_only=True).to_dict()
+                    averages = df.groupby("type").mean(numeric_only=True).to_dict(orient="index")
                     report_file.write(f"{key} Averages:\n")
                     for k, v in averages.items():
                         report_file.write(f"{k}: {v}\n")

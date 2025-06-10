@@ -26,10 +26,11 @@ class Preprocessor(StudyPreprocessor):
         pass
     
     def _preprocess_source_files(self) -> Any:
-        # create .env file
-        env_file = self.repl_package_path / ".env"
-        with open(env_file, 'w') as f:
-            f.write("OPENAI_API_KEY={}".format(os.getenv("OPENAI_API_KEY")))
+        # # create .env file
+        # env_file = self.repl_package_path / ".env"
+        # with open(env_file, 'w') as f:
+        #     f.write("OPENAI_API_KEY={}".format(os.getenv("OPENAI_API_KEY")))
+        pass
         
     
     def _prepare_environment(self, environment: Any) -> None:
