@@ -1,0 +1,14 @@
+[project]
+name = "replikit"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "docker>=7.1.0",
+    "git-python>=1.0.3",
+    "numpy>=2.3.0",
+    "pyyaml>=6.0.2",
+    "requests>=2.32.4",
+    "seaborn>=0.13.2",
+]
