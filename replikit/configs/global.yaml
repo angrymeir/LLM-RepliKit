@@ -7,6 +7,14 @@ study:
         runner_module: "001.runner"
         postprocessor_module: "001.postprocessor"
         significant_sample_size: 30
+    "002":
+        description: "RegExEval: Evaluating Generated Regular Expressions and their Proneness to DoS Attacks"
+        preprocessor_module: "002.preprocessor"
+        runner_module: "002.runner"
+        postprocessor_module: "002.postprocessor"
+        significant_sample_size: 30
+        source_dir: "replicationpackage"
+        docker_image_name: "002:latest"
     "009":
         description: "Lost in Translation: A Study of Bugs Introduced by Large Language Models while Translating Code"
         preprocessor_module: "009.preprocessor"
