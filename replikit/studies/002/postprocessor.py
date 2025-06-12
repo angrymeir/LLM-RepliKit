@@ -55,7 +55,7 @@ class PostProcessor(StudyPostprocessor):
                 posterior_quantiles[q].append(sorted_vals[min(idx, n - 1)])
         return {q: np.mean(posterior_quantiles[q]) for q in quantiles}
 
-    def _plot_distribution(self, values, metric_name, run_type, save_dir=None):
+    def _plot_distribution(self, values, metric_name, run_type, save_dir):
         if len(values) == 0:
             print(f"No valid data for {metric_name} ({run_type}), skipping plot.")
             return
@@ -89,13 +89,13 @@ class PostProcessor(StudyPostprocessor):
 
         plt.tight_layout()
 
-        if save_dir:
-            filename = f"{metric_name}_{run_type}_distribution.png"
-            filepath = os.path.join(save_dir, filename)
-            plt.savefig(filepath)
-            plt.close()
-        else:
-            plt.show()
+
+        filename = f"{metric_name}_{run_type}_distribution.png"
+        filepath = os.path.join(save_dir, filename)
+        os.makedirs(save_dir, exist_ok=True)
+        plt.savefig(filepath)
+        plt.close()
+
 
     def postprocess(self):
         print("Starting postprocessing...")
