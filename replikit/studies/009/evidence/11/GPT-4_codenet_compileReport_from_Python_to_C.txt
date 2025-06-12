@@ -1,25 +1,3 @@
-Total Instances: 200
-
-Total Correct: 170
-Total Runtime Failed: 0
-Total Compilation Failed: 9
-Total Test Failed: 21
-Total Infinite Loop: 0
-
-Accuracy: 85.0
-Runtime Rate: 0.0
-Compilation Rate: 4.5
-Test Failed Rate: 10.5
-Infinite Loop Rate: 0.0
-
-=================================================================================================
-Failed Test Files: ['s137613418.c', 's747093551.c', 's681105182.c', 's287369394.c', 's067092519.c', 's001486412.c', 's016605598.c', 's199418121.c', 's828550015.c', 's087080706.c', 's951169509.c', 's975943078.c', 's238775098.c', 's749244504.c', 's621701371.c', 's913338871.c', 's554393427.c', 's575946485.c', 's086522214.c', 's592421258.c', 's344468705.c'] 
-Failed Test Details: ['Filename: s199418121.c Actual: 217\n Generated: 1\n', 'Filename: s137613418.c Actual: YES\n Generated: NO\n', 'Filename: s681105182.c Actual: 11 6\n Generated: 11 4\n', 'Filename: s828550015.c Actual: 12\n Generated: 11\n', 'Filename: s975943078.c Actual: 4\n Generated: ', 'Filename: s554393427.c Actual: 48000.0\n Generated: 48000\n', 'Filename: s344468705.c Actual: 2\n Generated: 1\n3\n6\n8\n11\n', 'Filename: s087080706.c Actual: 1\n Generated: 2\n', 'Filename: s592421258.c Actual: Yes\n Generated: No\n', 'Filename: s086522214.c Actual: Heisei\n Generated: ', 'Filename: s951169509.c Actual: 4\n Generated: ', 'Filename: s001486412.c Actual: 7.5\n Generated: 7.500000\n', 'Filename: s749244504.c Actual: 12\n Generated: -6046620\n', 'Filename: s287369394.c Actual: 9\n Generated: 6\n', 'Filename: s016605598.c Actual: 4 2\n1 -3\n Generated: 6\n-19\n', 'Filename: s913338871.c Actual: 10\n Generated: 5\n', 'Filename: s238775098.c Actual: 48000.0\n Generated: 48000\n', 'Filename: s621701371.c Actual: cpa\n Generated: pa', 'Filename: s747093551.c Actual: No War\n Generated: War\n', 'Filename: s575946485.c Actual: 215\n Generated: 10207\n', 'Filename: s067092519.c Actual:  0 0 8 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n####################\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n####################\n 0 0 0 0 0 0 0 0 0 0\n 0 7 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n####################\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 1 0 0\n Generated:  0 0 8 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n#********************#\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n#********************#\n 0 0 0 0 0 0 0 0 0 0\n 0 7 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n#********************#\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 1 0 0\n'] 
-=================================================================================================
-Runtime Error Files: [] 
-Runtime Error Details: [] 
-=================================================================================================
-Compilation Error Files: ['s840967243.c', 's951065247.c', 's662673721.c', 's790754864.c', 's663509070.c', 's591424993.c', 's908812767.c', 's124725275.c', 's538657784.c'] 
-=================================================================================================
-Infinite Loop Files: [] 
-=================================================================================================
+version https://git-lfs.github.com/spec/v1
+oid sha256:189f05d9b8974a49564b2881f34649e4929f5f3cc1532d62969bc0cb31c255da
+size 3223

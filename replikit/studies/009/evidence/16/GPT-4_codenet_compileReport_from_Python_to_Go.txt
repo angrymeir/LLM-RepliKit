@@ -1,25 +1,3 @@
-Total Instances: 200
-
-Total Correct: 162
-Total Runtime Failed: 4
-Total Compilation Failed: 19
-Total Test Failed: 15
-Total Infinite Loop: 0
-
-Accuracy: 81.0
-Runtime Rate: 2.0
-Compilation Rate: 9.5
-Test Failed Rate: 7.5
-Infinite Loop Rate: 0.0
-
-=================================================================================================
-Failed Test Files: ['s147181072.go', 's768331281.go', 's554393427.go', 's977408144.go', 's287369394.go', 's875904659.go', 's430322735.go', 's273727373.go', 's913338871.go', 's695100304.go', 's735480710.go', 's238775098.go', 's124725275.go', 's763208424.go', 's681105182.go'] 
-Failed Test Details: ['Filename: s768331281.go Actual: axxcxxdxx\n Generated: [axx cxx dxx]\n', 'Filename: s238775098.go Actual: 48000.0\n Generated: 48000\n', 'Filename: s554393427.go Actual: 48000.0\n Generated: 48000\n', 'Filename: s977408144.go Actual: axxcxxdxx\n Generated: axx cxx dxx\n', 'Filename: s430322735.go Actual: 1\n Generated: 5\n', 'Filename: s124725275.go Actual: 1\n Generated: 0\n', 'Filename: s875904659.go Actual: D2 C3 H4 S4 C9\nStable\nD2 C3 S4 H4 C9\nNot stable\n Generated: H4\nStable\nH4\nStable\n', 'Filename: s913338871.go Actual: 10\n Generated: 5\n', 'Filename: s147181072.go Actual: Fair, later, occasionally cloudy.\n Generated: Fair,\n', 'Filename: s287369394.go Actual: 9\n Generated: 6\n', 'Filename: s735480710.go Actual: 4 2 1 3\n Generated: 2 4 1 3\n', 'Filename: s681105182.go Actual: 11 6\n Generated: 11 9\n', 'Filename: s273727373.go Actual: 3 1 2\n Generated: [3 1 2]\n', 'Filename: s695100304.go Actual: 5 4 3 2 1\n Generated: [5 4 3 2 1]\n', 'Filename: s763208424.go Actual: 9\n Generated: 21\n'] 
-=================================================================================================
-Runtime Error Files: ['s621701371.go', 's170274782.go', 's960572618.go', 's016605598.go'] 
-Runtime Error Details: ['Filename: s960572618.go Error_type: panic: runtime error: index out of range [1] with length 1\n\ngoroutine 1 [running]:\nmain.main()\n\t/replicationpackage/output/GPT-4/codenet/Python/Go/s960572618.go:14 +0x1ac\n', 'Filename: s621701371.go Error_type: panic: runtime error: index out of range [1] with length 1\n\ngoroutine 1 [running]:\nmain.main()\n\t/replicationpackage/output/GPT-4/codenet/Python/Go/s621701371.go:30 +0x490\n', 'Filename: s016605598.go Error_type: panic: runtime error: index out of range [0] with length 0\n\ngoroutine 1 [running]:\nmain.IntHeap.Swap(...)\n\t/replicationpackage/output/GPT-4/codenet/Python/Go/s016605598.go:13\ncontainer/heap.Pop({0xd8db0, 0x400000c030})\n\t/usr/local/go/src/container/heap/heap.go:61 +0x48\nmain.main()\n\t/replicationpackage/output/GPT-4/codenet/Python/Go/s016605598.go:71 +0x360\n', 'Filename: s170274782.go Error_type: panic: runtime error: index out of range [1] with length 1\n\ngoroutine 1 [running]:\nmain.main()\n\t/replicationpackage/output/GPT-4/codenet/Python/Go/s170274782.go:20 +0x38c\n'] 
-=================================================================================================
-Compilation Error Files: ['s817205687.go', 's174910557.go', 's137613418.go', 's986062252.go', 's269975433.go', 's039768540.go', 's770408311.go', 's441329208.go', 's790754864.go', 's259116349.go', 's749244504.go', 's537584449.go', 's664563518.go', 's906994739.go', 's225615697.go', 's747093551.go', 's975943078.go', 's344468705.go', 's826716211.go'] 
-=================================================================================================
-Infinite Loop Files: [] 
-=================================================================================================
+version https://git-lfs.github.com/spec/v1
+oid sha256:ced5686d8de9255c20e3cdb706f062f537fbfdbd9dd6f433943736c015727448
+size 3605

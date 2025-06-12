@@ -1,14 +1,3 @@
-0,Compilation Error
-0,Compilation Error
-0,Compilation Error
-0,Compilation Error
-0,Runtime Error
-0,Runtime Error
-0,Runtime Error
-0,Runtime Error
-0,Wrong Output
-0,Wrong Output
-0,Wrong Output
-0,Wrong Output
-0,Wrong Output
-0,Wrong Output
+version https://git-lfs.github.com/spec/v1
+oid sha256:5bd3a2498cee38ac397d5470d855e45bc5fee4b5e5e644082d0aff8ead27f147
+size 234

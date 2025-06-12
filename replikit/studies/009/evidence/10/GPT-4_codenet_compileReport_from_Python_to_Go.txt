@@ -1,25 +1,3 @@
-Total Instances: 200
-
-Total Correct: 161
-Total Runtime Failed: 2
-Total Compilation Failed: 18
-Total Test Failed: 19
-Total Infinite Loop: 0
-
-Accuracy: 80.5
-Runtime Rate: 1.0
-Compilation Rate: 9.0
-Test Failed Rate: 9.5
-Infinite Loop Rate: 0.0
-
-=================================================================================================
-Failed Test Files: ['s763208424.go', 's681105182.go', 's875904659.go', 's232279435.go', 's273727373.go', 's287369394.go', 's621701371.go', 's103029464.go', 's007458552.go', 's735480710.go', 's768331281.go', 's554393427.go', 's960572618.go', 's147181072.go', 's238775098.go', 's031917494.go', 's695100304.go', 's977408144.go', 's913338871.go'] 
-Failed Test Details: ['Filename: s287369394.go Actual: 9\n Generated: 6\n', 'Filename: s768331281.go Actual: axxcxxdxx\n Generated: [axx cxx dxx]\n', 'Filename: s735480710.go Actual: 4 2 1 3\n Generated: 2 4 1 3\n', 'Filename: s695100304.go Actual: 5 4 3 2 1\n Generated: [5 4 3 2 1]\n', 'Filename: s273727373.go Actual: 3 1 2\n Generated: [3 1 2]\n', 'Filename: s031917494.go Actual: Christmas\n Generated: Christmas Eve\n', 'Filename: s875904659.go Actual: D2 C3 H4 S4 C9\nStable\nD2 C3 S4 H4 C9\nNot stable\n Generated: H4\nStable\nH4\nStable\n', 'Filename: s232279435.go Actual: 2\n Generated: 1\n', 'Filename: s681105182.go Actual: 11 6\n Generated: 11 9\n', 'Filename: s977408144.go Actual: axxcxxdxx\n Generated: axx cxx dxx\n', 'Filename: s147181072.go Actual: Fair, later, occasionally cloudy.\n Generated: Fair,\n', 'Filename: s103029464.go Actual: 1\n1\n Generated: 1\n[1]\n', 'Filename: s763208424.go Actual: 9\n Generated: 21\n', 'Filename: s913338871.go Actual: 10\n Generated: 5\n', 'Filename: s960572618.go Actual: Yes\n Generated: ', 'Filename: s621701371.go Actual: cpa\n Generated: a\n', 'Filename: s554393427.go Actual: 48000.0\n Generated: 48000\n', 'Filename: s007458552.go Actual: Yes\n Generated: No\n', 'Filename: s238775098.go Actual: 48000.0\n Generated: 48000\n'] 
-=================================================================================================
-Runtime Error Files: ['s124725275.go', 's016605598.go'] 
-Runtime Error Details: ['Filename: s124725275.go Error_type: panic: runtime error: index out of range [0] with length 0\n\ngoroutine 1 [running]:\nmain.gridBFS({0x17c1a0?, 0x14d38?, 0x4000094000?}, 0x0?, 0x4000040768?)\n\t/replicationpackage/output/GPT-4/codenet/Python/Go/s124725275.go:64 +0x584\nmain.main()\n\t/replicationpackage/output/GPT-4/codenet/Python/Go/s124725275.go:126 +0x74\n', 'Filename: s016605598.go Error_type: panic: runtime error: index out of range [0] with length 0\n\ngoroutine 1 [running]:\nmain.IntHeap.Swap(...)\n\t/replicationpackage/output/GPT-4/codenet/Python/Go/s016605598.go:13\ncontainer/heap.Pop({0xd8dc0, 0x400000c030})\n\t/usr/local/go/src/container/heap/heap.go:61 +0x48\nmain.main()\n\t/replicationpackage/output/GPT-4/codenet/Python/Go/s016605598.go:75 +0x384\n'] 
-=================================================================================================
-Compilation Error Files: ['s752993784.go', 's704354119.go', 's826716211.go', 's060838372.go', 's951169509.go', 's975943078.go', 's174910557.go', 's664563518.go', 's747093551.go', 's267613210.go', 's137613418.go', 's344468705.go', 's817205687.go', 's840967243.go', 's225615697.go', 's749244504.go', 's534639230.go', 's986062252.go'] 
-=================================================================================================
-Infinite Loop Files: [] 
-=================================================================================================
+version https://git-lfs.github.com/spec/v1
+oid sha256:56bdc2bf6b66109fe19dd4e80e02806a2fa3bc3717f167b647b86642a489f055
+size 3587

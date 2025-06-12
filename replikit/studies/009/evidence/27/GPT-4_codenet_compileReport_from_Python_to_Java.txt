@@ -1,25 +1,3 @@
-Total Instances: 200
-
-Total Correct: 183
-Total Runtime Failed: 3
-Total Compilation Failed: 5
-Total Test Failed: 9
-Total Infinite Loop: 0
-
-Accuracy: 91.5
-Runtime Rate: 1.5
-Compilation Rate: 2.5
-Test Failed Rate: 4.5
-Infinite Loop Rate: 0.0
-
-=================================================================================================
-Failed Test Files: ['s287369394.java', 's016605598.java', 's913338871.java', 's951065247.java', 's763208424.java', 's225615697.java', 's067092519.java', 's269975433.java', 's430322735.java'] 
-Failed Test Details: ['Filename: s763208424.java Actual: 9\n Generated: -9\n', 'Filename: s269975433.java Actual: 110\n Generated: 0\n', 'Filename: s951065247.java Actual: 23\n Generated: -2147483639\n', 'Filename: s430322735.java Actual: 1\n Generated: 4\n', 'Filename: s913338871.java Actual: 10\n Generated: 0\n', 'Filename: s287369394.java Actual: 9\n Generated: 6\n', 'Filename: s067092519.java Actual:  0 0 8 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n####################\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n####################\n 0 0 0 0 0 0 0 0 0 0\n 0 7 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n####################\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 1 0 0\n Generated: 0 0 8 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n####################\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n####################\n0 0 0 0 0 0 0 0 0 0\n0 7 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n####################\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 0 0 0\n0 0 0 0 0 0 0 1 0 0\n', 'Filename: s225615697.java Actual: 4 0 4\n Generated: 8 -4 8\n', 'Filename: s016605598.java Actual: 4 2\n1 -3\n Generated: 6\n-2\n'] 
-=================================================================================================
-Runtime Error Files: ['s087080706.java', 's592421258.java', 's828550015.java'] 
-Runtime Error Details: ['Filename: s087080706.java Error_type: Exception in thread "main" java.util.NoSuchElementException\n\tat java.base/java.util.Scanner.throwFor(Scanner.java:937)\n\tat java.base/java.util.Scanner.next(Scanner.java:1594)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2258)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2212)\n\tat s087080706.main(s087080706.java:14)\n', 'Filename: s592421258.java Error_type: Exception in thread "main" java.util.InputMismatchException\n\tat java.base/java.util.Scanner.throwFor(Scanner.java:939)\n\tat java.base/java.util.Scanner.next(Scanner.java:1594)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2258)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2212)\n\tat s592421258.main(s592421258.java:7)\n', 'Filename: s828550015.java Error_type: Exception in thread "main" java.util.NoSuchElementException\n\tat java.base/java.util.Scanner.throwFor(Scanner.java:937)\n\tat java.base/java.util.Scanner.next(Scanner.java:1594)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2258)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2212)\n\tat s828550015.main(s828550015.java:37)\n'] 
-=================================================================================================
-Compilation Error Files: ['s344468705.java', 's817205687.java', 's681105182.java', 's124725275.java', 's210889193.java'] 
-=================================================================================================
-Infinite Loop Files: [] 
-=================================================================================================
+version https://git-lfs.github.com/spec/v1
+oid sha256:ab6cfc810e8262b2b59cd88387984736246fb6bed512addcc8f79d4f65f420fb
+size 3536

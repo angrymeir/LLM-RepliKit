@@ -1,25 +1,3 @@
-Total Instances: 200
-
-Total Correct: 183
-Total Runtime Failed: 5
-Total Compilation Failed: 6
-Total Test Failed: 6
-Total Infinite Loop: 0
-
-Accuracy: 91.5
-Runtime Rate: 2.5
-Compilation Rate: 3.0
-Test Failed Rate: 3.0
-Infinite Loop Rate: 0.0
-
-=================================================================================================
-Failed Test Files: ['s951065247.java', 's430322735.java', 's749244504.java', 's287369394.java', 's225615697.java', 's913338871.java'] 
-Failed Test Details: ['Filename: s913338871.java Actual: 10\n Generated: 5\n', 'Filename: s749244504.java Actual: 12\n Generated: 18\n', 'Filename: s430322735.java Actual: 1\n Generated: 4\n', 'Filename: s951065247.java Actual: 23\n Generated: -2147483639\n', 'Filename: s225615697.java Actual: 4 0 4\n Generated: 24 0 4\n', 'Filename: s287369394.java Actual: 9\n Generated: 6\n'] 
-=================================================================================================
-Runtime Error Files: ['s906994739.java', 's087080706.java', 's592421258.java', 's828550015.java', 's344468705.java'] 
-Runtime Error Details: ['Filename: s592421258.java Error_type: Exception in thread "main" java.util.InputMismatchException\n\tat java.base/java.util.Scanner.throwFor(Scanner.java:939)\n\tat java.base/java.util.Scanner.next(Scanner.java:1594)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2258)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2212)\n\tat s592421258.main(s592421258.java:7)\n', 'Filename: s087080706.java Error_type: Exception in thread "main" java.util.NoSuchElementException\n\tat java.base/java.util.Scanner.throwFor(Scanner.java:937)\n\tat java.base/java.util.Scanner.next(Scanner.java:1594)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2258)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2212)\n\tat s087080706.main(s087080706.java:15)\n', 'Filename: s828550015.java Error_type: Exception in thread "main" java.util.NoSuchElementException\n\tat java.base/java.util.Scanner.throwFor(Scanner.java:937)\n\tat java.base/java.util.Scanner.next(Scanner.java:1594)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2258)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2212)\n\tat s828550015.main(s828550015.java:33)\n', 'Filename: s344468705.java Error_type: Exception in thread "main" java.util.NoSuchElementException\n\tat java.base/java.util.Scanner.throwFor(Scanner.java:937)\n\tat java.base/java.util.Scanner.next(Scanner.java:1594)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2258)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2212)\n\tat s344468705.solve(s344468705.java:10)\n\tat s344468705.main(s344468705.java:34)\n', 'Filename: s906994739.java Error_type: Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 1 out of bounds for length 1\n\tat s906994739.main(s906994739.java:37)\n'] 
-=================================================================================================
-Compilation Error Files: ['s763208424.java', 's681105182.java', 's764169243.java', 's817205687.java', 's662673721.java', 's124725275.java'] 
-=================================================================================================
-Infinite Loop Files: [] 
-=================================================================================================
+version https://git-lfs.github.com/spec/v1
+oid sha256:f96fb523f3fd307f12b39259a1900147985dfd99269aa21fa12bb10ac3b9e7e5
+size 3331

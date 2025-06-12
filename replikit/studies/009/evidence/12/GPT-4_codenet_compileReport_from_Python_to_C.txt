@@ -1,25 +1,3 @@
-Total Instances: 200
-
-Total Correct: 172
-Total Runtime Failed: 0
-Total Compilation Failed: 7
-Total Test Failed: 20
-Total Infinite Loop: 1
-
-Accuracy: 86.0
-Runtime Rate: 0.0
-Compilation Rate: 3.5000000000000004
-Test Failed Rate: 10.0
-Infinite Loop Rate: 0.5
-
-=================================================================================================
-Failed Test Files: ['s238775098.c', 's975943078.c', 's430322735.c', 's733189960.c', 's913338871.c', 's747093551.c', 's749244504.c', 's554393427.c', 's621701371.c', 's001486412.c', 's233116196.c', 's016605598.c', 's067092519.c', 's124725275.c', 's951065247.c', 's031917494.c', 's344468705.c', 's828550015.c', 's763208424.c', 's287369394.c'] 
-Failed Test Details: ['Filename: s233116196.c Actual: 1\n Generated: ', 'Filename: s828550015.c Actual: 12\n Generated: 11\n', 'Filename: s747093551.c Actual: No War\n Generated: War\n', 'Filename: s124725275.c Actual: 1\n Generated: 2\n', 'Filename: s430322735.c Actual: 1\n Generated: ', 'Filename: s287369394.c Actual: 9\n Generated: 6\n', 'Filename: s749244504.c Actual: 12\n Generated: 18\n', 'Filename: s554393427.c Actual: 48000.0\n Generated: 48000\n', 'Filename: s016605598.c Actual: 4 2\n1 -3\n Generated: 4\n2\n-1\n-9\n', 'Filename: s067092519.c Actual:  0 0 8 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n####################\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n####################\n 0 0 0 0 0 0 0 0 0 0\n 0 7 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n####################\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 1 0 0\n Generated:  0 0 8 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n#############################\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n#############################\n 0 0 0 0 0 0 0 0 0 0\n 0 7 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n#############################\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 0 0 0\n 0 0 0 0 0 0 0 1 0 0\n', 'Filename: s975943078.c Actual: 4\n Generated: 2\n', 'Filename: s031917494.c Actual: Christmas\n Generated: Enter a number: Christmas\n', 'Filename: s238775098.c Actual: 48000.0\n Generated: 48000\n', 'Filename: s951065247.c Actual: 23\n Generated: -2147483639\n', 'Filename: s913338871.c Actual: 10\n Generated: 5\n', 'Filename: s621701371.c Actual: cpa\n Generated: pca', 'Filename: s733189960.c Actual: 1\n Generated: ', 'Filename: s001486412.c Actual: 7.5\n Generated: 7.500000\n', 'Filename: s344468705.c Actual: 2\n Generated: 1\n3\n3\n3\n3\n', 'Filename: s763208424.c Actual: 9\n Generated: 21\n'] 
-=================================================================================================
-Runtime Error Files: [] 
-Runtime Error Details: [] 
-=================================================================================================
-Compilation Error Files: ['s681105182.c', 's957164965.c', 's663509070.c', 's269975433.c', 's662673721.c', 's538657784.c', 's534639230.c'] 
-=================================================================================================
-Infinite Loop Files: ['s259116349.c'] 
-=================================================================================================
+version https://git-lfs.github.com/spec/v1
+oid sha256:a15021493e438a4d1a96468e228ef404139d0f412a60c8bf0bc6925230beb893
+size 3191

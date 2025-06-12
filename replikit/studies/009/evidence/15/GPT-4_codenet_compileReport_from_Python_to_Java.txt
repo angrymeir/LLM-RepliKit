@@ -1,25 +1,3 @@
-Total Instances: 200
-
-Total Correct: 186
-Total Runtime Failed: 3
-Total Compilation Failed: 6
-Total Test Failed: 5
-Total Infinite Loop: 0
-
-Accuracy: 93.0
-Runtime Rate: 1.5
-Compilation Rate: 3.0
-Test Failed Rate: 2.5
-Infinite Loop Rate: 0.0
-
-=================================================================================================
-Failed Test Files: ['s287369394.java', 's951065247.java', 's913338871.java', 's269975433.java', 's430322735.java'] 
-Failed Test Details: ['Filename: s951065247.java Actual: 23\n Generated: -2147483639\n', 'Filename: s269975433.java Actual: 110\n Generated: 0\n', 'Filename: s913338871.java Actual: 10\n Generated: 0\n', 'Filename: s287369394.java Actual: 9\n Generated: 6\n', 'Filename: s430322735.java Actual: 1\n Generated: 4\n'] 
-=================================================================================================
-Runtime Error Files: ['s087080706.java', 's592421258.java', 's344468705.java'] 
-Runtime Error Details: ['Filename: s344468705.java Error_type: Exception in thread "main" java.util.NoSuchElementException\n\tat java.base/java.util.Scanner.throwFor(Scanner.java:937)\n\tat java.base/java.util.Scanner.next(Scanner.java:1594)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2258)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2212)\n\tat s344468705.solve(s344468705.java:9)\n\tat s344468705.main(s344468705.java:33)\n', 'Filename: s087080706.java Error_type: Exception in thread "main" java.util.NoSuchElementException\n\tat java.base/java.util.Scanner.throwFor(Scanner.java:937)\n\tat java.base/java.util.Scanner.next(Scanner.java:1594)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2258)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2212)\n\tat s087080706.main(s087080706.java:14)\n', 'Filename: s592421258.java Error_type: Exception in thread "main" java.util.InputMismatchException\n\tat java.base/java.util.Scanner.throwFor(Scanner.java:939)\n\tat java.base/java.util.Scanner.next(Scanner.java:1594)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2258)\n\tat java.base/java.util.Scanner.nextInt(Scanner.java:2212)\n\tat s592421258.main(s592421258.java:7)\n'] 
-=================================================================================================
-Compilation Error Files: ['s147181072.java', 's906994739.java', 's817205687.java', 's749244504.java', 's681105182.java', 's828550015.java'] 
-=================================================================================================
-Infinite Loop Files: [] 
-=================================================================================================
+version https://git-lfs.github.com/spec/v1
+oid sha256:27c7ab8566a10c1d0eceaa7401c139237be7fb7e89f00b3db9cf2c0557a05f8f
+size 2633
