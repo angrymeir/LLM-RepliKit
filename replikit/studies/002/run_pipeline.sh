@@ -7,7 +7,8 @@ cat <<EOF > /workspace/RegexEval/Generation/config.json
   "OPENAI_KEY": "${OPENAI_API_KEY}"
 }
 EOF
-# TODO: is doing this fine? -> speeds up evaluation, and we are only interested in gpt results
+
+# we are only interested in gpt results
 for file in \
     /workspace/RegexEval/Evaluation/Compilation.py \
     /workspace/RegexEval/Evaluation/Pass_at_k_Evaluation.py \
@@ -24,7 +25,7 @@ cd /workspace/RegexEval/Generation
 
 echo "[Step 1] Running GPT3.5 generation..."
 # Limit processing to first 2 items in gpt35.py # TODO: remove after testing when doin experiment runs
-sed -i 's/^for item in data:/for item in data[:2]:/' gpt35.py
+#sed -i 's/^for item in data:/for item in data[:2]:/' gpt35.py
 python3 gpt35.py # gives prompt_type raw
 python3 gpt35.py --prompt_type refined
 cp /workspace/RegexEval/Generation/Output/GPT3.5_Raw_Output.json /workspace/output/GPT3.5_Raw_Output.json
