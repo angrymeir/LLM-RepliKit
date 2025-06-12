@@ -3,18 +3,17 @@ from base.preprocessor import StudyPreprocessor
 import os
 import docker
 
+
 class Preprocessor(StudyPreprocessor):
-    
     def __init__(self, config):
         super().__init__(config)
 
     def _configure(self):
         super()._configure()
-        self.repl_package_path = self.study_dir / self.config['source_dir']
-        self.reset = self.config.get('reset', False)
+        self.repl_package_path = self.study_dir / self.config["source_dir"]
+        self.reset = self.config.get("reset", False)
 
     def magic(self):
-        # self._download_source_files(self.config['source_files'])
         self._preprocess_source_files()
         self._prepare_environment("")
         print("Preprocessing everything...")
@@ -24,15 +23,10 @@ class Preprocessor(StudyPreprocessor):
 
     def _process_data(self, data: Any) -> Any:
         pass
-    
+
     def _preprocess_source_files(self) -> Any:
-        # # create .env file
-        # env_file = self.repl_package_path / ".env"
-        # with open(env_file, 'w') as f:
-        #     f.write("OPENAI_API_KEY={}".format(os.getenv("OPENAI_API_KEY")))
         pass
-        
-    
+
     def _prepare_environment(self, environment: Any) -> None:
         print("Building docker image...")
         client = docker.from_env()
@@ -40,11 +34,13 @@ class Preprocessor(StudyPreprocessor):
         dockerfile_path = str(self.study_dir)
 
         try:
-            if self.config.get('reset', False):
-                client.images.build(path=dockerfile_path, tag="002:latest", nocache=True)
+            if self.config.get("reset", False):
+                client.images.build(
+                    path=dockerfile_path, tag="002:latest", nocache=True
+                )
                 print("Docker image built successfully!")
         except docker.errors.BuildError as e:
             print("Build failed:", e)
         except Exception as e:
             print("Error:", e)
-        print("Docker image built successfully!")  
+        print("Docker image built successfully!")

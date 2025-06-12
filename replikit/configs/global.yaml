@@ -13,7 +13,7 @@ study:
         runner_module: "002.runner"
         postprocessor_module: "002.postprocessor"
         significant_sample_size: 30
-        source_dir: "replicationpackage"
+        source_dir: ""
         docker_image_name: "002:latest"
     "009":
         description: "Lost in Translation: A Study of Bugs Introduced by Large Language Models while Translating Code"

@@ -1,3 +1,4 @@
+from dotenv import load_dotenv
 from base.runner import StudyRunner
 import docker
 import os
@@ -28,18 +29,14 @@ class Runner(StudyRunner):
         host_dir = os.path.join(parent_dir, host_dir)
         os.makedirs(host_dir, exist_ok=True)
         client = docker.from_env()
-
+        load_dotenv()
         container = client.containers.create(
             image=self.config["docker_image_name"],
-            working_dir="",
-            command="",
             volumes={host_dir: {"bind": "/workspace/output", "mode": "rw"}},
             tty=True,
             stdin_open=True,
             detach=True,
-            environment=[
-                "OPENAI_API_KEY={}".format(os.getenv("OPENAI_API_KEY"))
-            ],
+            environment=["OPENAI_API_KEY={}".format(os.getenv("OPENAI_API_KEY"))],
         )
 
         container.start()
@@ -51,7 +48,7 @@ class Runner(StudyRunner):
                 sys.stdout.write(chunk.decode())
                 sys.stdout.flush()
             except UnicodeDecodeError:
-                continue  # skip problematic chunks
+                continue  # skip problematic chunks -> some prints were chinese in this study and caused problems
 
     def save_evidence(self, run_number):
         tmp_evidence_dir = "tmp/{}".format(
