@@ -1,0 +1,311 @@
+Averages by type across all study runs:
+
+Type: raw
+parseable: 0.2381
+EM: 23.0534
+DFA-EQ@1: 8.1802
+DFA-EQ@3: 11.1549
+DFA-EQ@10: 15.3106
+pass_at_1: 23.8101
+pass_at_3: 31.4428
+pass_at_10: 38.8014
+vul@1_rescue: 0.3106
+vul@3_rescue: 1.1962
+vul@10_rescue: 1.9685
+vul@1_redos: 3.1365
+vul@3_redos: 5.6186
+vul@10_redos: 9.6675
+
+Type: refined
+parseable: 0.1488
+EM: 12.3360
+DFA-EQ@1: 7.2178
+DFA-EQ@3: 13.5608
+DFA-EQ@10: 23.0534
+pass_at_1: 14.8819
+pass_at_3: 21.0732
+pass_at_10: 27.4278
+vul@1_rescue: 0.0350
+vul@3_rescue: 0.1750
+vul@10_rescue: 0.3500
+vul@1_redos: 1.6929
+vul@3_redos: 2.7865
+vul@10_redos: 4.7682
+
+
+Overall Averages:
+         parseable         EM  DFA-EQ@1   DFA-EQ@3  DFA-EQ@10  pass_at_1  pass_at_3  pass_at_10  vul@1_rescue  vul@3_rescue  vul@10_rescue  vul@1_redos  vul@3_redos  vul@10_redos
+type                                                                                                                                                                              
+raw       0.238101  23.053368  8.180227  11.154856  15.310586  23.810149  31.442840   38.801400      0.310586      1.196205       1.968504     3.136483     5.618621      9.667542
+refined   0.148819  12.335958  7.217848  13.560805  23.053368  14.881890  21.073199   27.427822      0.034996      0.174978       0.349956     1.692913     2.786527      4.768154
+
+
+Posterior Percentiles for Metrics by Type:
+
+
+Type: raw
+
+Metric: parseable
+Posterior 5th percentile: 0.2339
+Posterior 10th percentile: 0.2345
+Posterior 25th percentile: 0.2362
+Posterior 50th percentile: 0.2386
+Posterior 75th percentile: 0.2402
+Posterior 90th percentile: 0.2409
+Posterior 95th percentile: 0.2411
+
+Metric: EM
+Posterior 5th percentile: 22.3270
+Posterior 10th percentile: 22.3527
+Posterior 25th percentile: 22.4864
+Posterior 50th percentile: 22.9068
+Posterior 75th percentile: 23.5481
+Posterior 90th percentile: 24.0243
+Posterior 95th percentile: 24.2122
+
+Metric: DFA-EQ@1
+Posterior 5th percentile: 7.5324
+Posterior 10th percentile: 7.5885
+Posterior 25th percentile: 7.7675
+Posterior 50th percentile: 8.1273
+Posterior 75th percentile: 8.5615
+Posterior 90th percentile: 8.8455
+Posterior 95th percentile: 8.9507
+
+Metric: DFA-EQ@3
+Posterior 5th percentile: 10.5397
+Posterior 10th percentile: 10.5882
+Posterior 25th percentile: 10.7485
+Posterior 50th percentile: 11.0932
+Posterior 75th percentile: 11.5357
+Posterior 90th percentile: 11.8432
+Posterior 95th percentile: 11.9575
+
+Metric: DFA-EQ@10
+Posterior 5th percentile: 14.6578
+Posterior 10th percentile: 14.7454
+Posterior 25th percentile: 14.9966
+Posterior 50th percentile: 15.3553
+Posterior 75th percentile: 15.6466
+Posterior 90th percentile: 15.7922
+Posterior 95th percentile: 15.8356
+
+Metric: pass_at_1
+Posterior 5th percentile: 23.3894
+Posterior 10th percentile: 23.4535
+Posterior 25th percentile: 23.6214
+Posterior 50th percentile: 23.8542
+Posterior 75th percentile: 24.0205
+Posterior 90th percentile: 24.0890
+Posterior 95th percentile: 24.1067
+
+Metric: pass_at_3
+Posterior 5th percentile: 31.0749
+Posterior 10th percentile: 31.1220
+Posterior 25th percentile: 31.2507
+Posterior 50th percentile: 31.4527
+Posterior 75th percentile: 31.6400
+Posterior 90th percentile: 31.7433
+Posterior 95th percentile: 31.7749
+
+Metric: pass_at_10
+Posterior 5th percentile: 38.7144
+Posterior 10th percentile: 38.7164
+Posterior 25th percentile: 38.7300
+Posterior 50th percentile: 38.7799
+Posterior 75th percentile: 38.8620
+Posterior 90th percentile: 38.9261
+Posterior 95th percentile: 38.9506
+
+Metric: vul@1_rescue
+Posterior 5th percentile: 0.2889
+Posterior 10th percentile: 0.2893
+Posterior 25th percentile: 0.2926
+Posterior 50th percentile: 0.3051
+Posterior 75th percentile: 0.3259
+Posterior 90th percentile: 0.3419
+Posterior 95th percentile: 0.3483
+
+Metric: vul@3_rescue
+Posterior 5th percentile: 1.0734
+Posterior 10th percentile: 1.0898
+Posterior 25th percentile: 1.1350
+Posterior 50th percentile: 1.2027
+Posterior 75th percentile: 1.2604
+Posterior 90th percentile: 1.2909
+Posterior 95th percentile: 1.3001
+
+Metric: vul@10_rescue
+Posterior 5th percentile: 1.8502
+Posterior 10th percentile: 1.8628
+Posterior 25th percentile: 1.9014
+Posterior 50th percentile: 1.9671
+Posterior 75th percentile: 2.0335
+Posterior 90th percentile: 2.0735
+Posterior 95th percentile: 2.0869
+
+Metric: vul@1_redos
+Posterior 5th percentile: 3.0079
+Posterior 10th percentile: 3.0239
+Posterior 25th percentile: 3.0688
+Posterior 50th percentile: 3.1395
+Posterior 75th percentile: 3.2052
+Posterior 90th percentile: 3.2446
+Posterior 95th percentile: 3.2559
+
+Metric: vul@3_redos
+Posterior 5th percentile: 5.2514
+Posterior 10th percentile: 5.2953
+Posterior 25th percentile: 5.4191
+Posterior 50th percentile: 5.6237
+Posterior 75th percentile: 5.8197
+Posterior 90th percentile: 5.9350
+Posterior 95th percentile: 5.9744
+
+Metric: vul@10_redos
+Posterior 5th percentile: 8.5307
+Posterior 10th percentile: 8.6584
+Posterior 25th percentile: 9.0460
+Posterior 50th percentile: 9.6655
+Posterior 75th percentile: 10.2855
+Posterior 90th percentile: 10.6526
+Posterior 95th percentile: 10.7734
+
+
+Type: refined
+
+Metric: parseable
+Posterior 5th percentile: 0.1455
+Posterior 10th percentile: 0.1460
+Posterior 25th percentile: 0.1475
+Posterior 50th percentile: 0.1493
+Posterior 75th percentile: 0.1504
+Posterior 90th percentile: 0.1507
+Posterior 95th percentile: 0.1508
+
+Metric: EM
+Posterior 5th percentile: 11.8776
+Posterior 10th percentile: 11.9401
+Posterior 25th percentile: 12.1153
+Posterior 50th percentile: 12.3697
+Posterior 75th percentile: 12.5740
+Posterior 90th percentile: 12.6722
+Posterior 95th percentile: 12.7015
+
+Metric: DFA-EQ@1
+Posterior 5th percentile: 6.9573
+Posterior 10th percentile: 6.9639
+Posterior 25th percentile: 7.0045
+Posterior 50th percentile: 7.1510
+Posterior 75th percentile: 7.4033
+Posterior 90th percentile: 7.6018
+Posterior 95th percentile: 7.6686
+
+Metric: DFA-EQ@3
+Posterior 5th percentile: 12.4332
+Posterior 10th percentile: 12.5383
+Posterior 25th percentile: 12.8570
+Posterior 50th percentile: 13.4924
+Posterior 75th percentile: 14.2339
+Posterior 90th percentile: 14.7360
+Posterior 95th percentile: 14.9137
+
+Metric: DFA-EQ@10
+Posterior 5th percentile: 21.5009
+Posterior 10th percentile: 21.7330
+Posterior 25th percentile: 22.3844
+Posterior 50th percentile: 23.2311
+Posterior 75th percentile: 23.8294
+Posterior 90th percentile: 24.0454
+Posterior 95th percentile: 24.1022
+
+Metric: pass_at_1
+Posterior 5th percentile: 14.5451
+Posterior 10th percentile: 14.5983
+Posterior 25th percentile: 14.7421
+Posterior 50th percentile: 14.9261
+Posterior 75th percentile: 15.0429
+Posterior 90th percentile: 15.0725
+Posterior 95th percentile: 15.0773
+
+Metric: pass_at_3
+Posterior 5th percentile: 20.4913
+Posterior 10th percentile: 20.5531
+Posterior 25th percentile: 20.7387
+Posterior 50th percentile: 21.0616
+Posterior 75th percentile: 21.3998
+Posterior 90th percentile: 21.6175
+Posterior 95th percentile: 21.6880
+
+Metric: pass_at_10
+Posterior 5th percentile: 26.9814
+Posterior 10th percentile: 27.0576
+Posterior 25th percentile: 27.2522
+Posterior 50th percentile: 27.4998
+Posterior 75th percentile: 27.6423
+Posterior 90th percentile: 27.6830
+Posterior 95th percentile: 27.6882
+
+Metric: vul@1_rescue
+Posterior 5th percentile: 0.0275
+Posterior 10th percentile: 0.0287
+Posterior 25th percentile: 0.0319
+Posterior 50th percentile: 0.0361
+Posterior 75th percentile: 0.0386
+Posterior 90th percentile: 0.0392
+Posterior 95th percentile: 0.0393
+
+Metric: vul@3_rescue
+Posterior 5th percentile: 0.1375
+Posterior 10th percentile: 0.1437
+Posterior 25th percentile: 0.1601
+Posterior 50th percentile: 0.1806
+Posterior 75th percentile: 0.1928
+Posterior 90th percentile: 0.1962
+Posterior 95th percentile: 0.1967
+
+Metric: vul@10_rescue
+Posterior 5th percentile: 0.2751
+Posterior 10th percentile: 0.2877
+Posterior 25th percentile: 0.3212
+Posterior 50th percentile: 0.3615
+Posterior 75th percentile: 0.3854
+Posterior 90th percentile: 0.3927
+Posterior 95th percentile: 0.3934
+
+Metric: vul@1_redos
+Posterior 5th percentile: 1.6485
+Posterior 10th percentile: 1.6558
+Posterior 25th percentile: 1.6753
+Posterior 50th percentile: 1.6995
+Posterior 75th percentile: 1.7140
+Posterior 90th percentile: 1.7185
+Posterior 95th percentile: 1.7190
+
+Metric: vul@3_redos
+Posterior 5th percentile: 2.5906
+Posterior 10th percentile: 2.6204
+Posterior 25th percentile: 2.7003
+Posterior 50th percentile: 2.8085
+Posterior 75th percentile: 2.8851
+Posterior 90th percentile: 2.9178
+Posterior 95th percentile: 2.9261
+
+Metric: vul@10_redos
+Posterior 5th percentile: 4.1585
+Posterior 10th percentile: 4.2456
+Posterior 25th percentile: 4.4888
+Posterior 50th percentile: 4.8238
+Posterior 75th percentile: 5.0759
+Posterior 90th percentile: 5.1873
+Posterior 95th percentile: 5.2188
+
+
+Detailed Scores:
+   type run_number  parseable        EM  DFA-EQ@1  DFA-EQ@3  DFA-EQ@10  pass_at_1  pass_at_3  pass_at_10  vul@1_rescue  vul@3_rescue  vul@10_rescue  vul@1_redos  vul@3_redos  vul@10_redos
+    raw          0   0.233202 22.440945  8.005249 10.892388  15.485564  23.320210  31.031277   38.976378      0.288714      1.057160       1.837270     3.267717     6.010499     10.892388
+refined          0   0.150787 12.729659  6.955381 15.091864  24.146982  15.078740  21.761811   27.690289      0.026247      0.131234       0.262467     1.719160     2.867454      4.986877
+    raw          2   0.239895 24.409449  7.480315 10.498688  14.566929  23.989501  31.488408   38.713911      0.288714      1.221722       2.099738     3.149606     5.637577      9.711286
+refined          2   0.150787 12.467192  7.742782 13.254593  23.753281  15.078740  21.024716   27.690289      0.039370      0.196850       0.393701     1.719160     2.933071      5.249344
+    raw          1   0.241207 22.309711  9.055118 12.073491  15.879265  24.120735  31.808836   38.713911      0.354331      1.309732       1.968504     2.992126     5.207787      8.398950
+refined          1   0.144882 11.811024  6.955381 12.335958  21.259843  14.488189  20.433071   26.902887      0.039370      0.196850       0.393701     1.640420     2.559055      4.068241

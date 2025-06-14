@@ -1,7 +1,6 @@
 import ast
 import copy
 import json
-import matplotlib.pyplot as plt
 
 import numpy as np
 from base.postprocessor import StudyPostprocessor
@@ -25,79 +24,7 @@ class PostProcessor(StudyPostprocessor):
         total_count = len(data)
         return passed_count / total_count if total_count > 0 else 0
 
-    def _calculate_quantils(
-        self,
-        values: np.ndarray,
-        quantiles=[0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95],
-        n_samples=10000,
-    ):
-        """
-        Compute posterior quantiles for a given set of metric values using a Dirichlet-weighted bootstrap.
-
-        Args:
-            values (np.ndarray): 1D array of metric values.
-            quantiles (List[float]): Quantiles to compute. Defaults to standard set [0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95].
-            n_samples (int): Number of bootstrap samples.
-
-        Returns:
-            dict: Mapping from quantile to posterior mean estimate.
-        """
-        posterior_quantiles = {q: [] for q in quantiles}
-        n = len(values)
-        for _ in range(n_samples):
-            weights = np.random.dirichlet(np.ones(n))
-            sorted_idx = np.argsort(values)
-            sorted_vals = values[sorted_idx]
-            sorted_weights = weights[sorted_idx]
-            cum_weights = np.cumsum(sorted_weights)
-            for q in quantiles:
-                idx = np.searchsorted(cum_weights, q)
-                posterior_quantiles[q].append(sorted_vals[min(idx, n - 1)])
-        return {q: np.mean(posterior_quantiles[q]) for q in quantiles}
-
-    def _plot_distribution(self, values, metric_name, run_type, save_dir):
-        if len(values) == 0:
-            print(f"No valid data for {metric_name} ({run_type}), skipping plot.")
-            return
-        posterior_result = self._calculate_quantils(values)
-        quantiles = list(posterior_result.keys())
-        percentile_values = [posterior_result[q] for q in quantiles]
-
-        plt.figure(figsize=(8, 5))
-        plt.hist(
-            values,
-            bins=20,
-            alpha=0.7,
-            color="steelblue",
-            edgecolor="black",
-            density=True,
-        )
-        plt.title(f"Posterior Distribution of {metric_name} ({run_type})")
-        plt.xlabel(metric_name)
-        plt.ylabel("Density")
-
-        for q, val in zip(quantiles, percentile_values):
-            plt.axvline(x=val, color="red", linestyle="--", linewidth=1)
-            plt.text(
-                val,
-                plt.ylim()[1] * 0.9,
-                f"{int(q * 100)}%",
-                rotation=90,
-                color="red",
-                fontsize=8,
-            )
-
-        plt.tight_layout()
-
-
-        filename = f"{metric_name}_{run_type}_distribution.png"
-        filepath = os.path.join(save_dir, filename)
-        os.makedirs(save_dir, exist_ok=True)
-        plt.savefig(filepath)
-        plt.close()
-
-
-    def postprocess(self):
+    def postprocess(self, statistics_only):
         print("Starting postprocessing...")
         parent_dir = os.path.dirname(os.path.abspath(__file__))
         evidence_dir = os.path.join(parent_dir, "evidence")
@@ -283,19 +210,18 @@ class PostProcessor(StudyPostprocessor):
                     values = filtered_df[col].dropna()
                     values = values[values >= 0].values  # Skip invalid entries
                     if len(values) > 0:
-                        posterior_result = self._calculate_quantils(values)
+                        quantiles, posterior_quantiles = self._calculate_quantils(values)
                         plot_dir = os.path.join(
                             evidence_dir, f"{run_type}_plots"
                         )
                         os.makedirs(plot_dir, exist_ok=True)
                         self._plot_distribution(
-                            values, col, run_type, save_dir=plot_dir
+                            values, file_path=os.path.join(plot_dir, f"{col}_distribution.png")
                         )
                         report_file.write(f"\nMetric: {col}\n")
-                        for q, val in posterior_result.items():
-                            report_file.write(
-                                f"{int(q * 100)}th percentile: {val:.4f}\n"
-                            )
+                        for q in quantiles:
+                            print(f"Posterior {int(q*100)}th percentile: {np.mean(posterior_quantiles[q]):.4f}")
+                            report_file.write(f"Posterior {int(q*100)}th percentile: {np.mean(posterior_quantiles[q]):.4f}\n")
                     else:
                         report_file.write(f"\nMetric: {col} — No valid data.\n")
 
