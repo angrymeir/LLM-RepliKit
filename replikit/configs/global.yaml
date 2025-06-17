@@ -15,6 +15,7 @@ study:
         significant_sample_size: 30
         source_dir: ""
         docker_image_name: "002:latest"
+        use_kubernetes: true
     "009":
         description: "Lost in Translation: A Study of Bugs Introduced by Large Language Models while Translating Code"
         preprocessor_module: "009.preprocessor"

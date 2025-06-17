@@ -14,8 +14,8 @@ class Preprocessor(StudyPreprocessor):
         self.reset = self.config.get("reset", False)
 
     def magic(self):
-        self._preprocess_source_files()
-        self._prepare_environment("")
+        if not self.config.get("use_kubernetes", False):
+            self._prepare_environment("")
         print("Preprocessing everything...")
 
     def _load_data(self, reference: Any) -> Any:

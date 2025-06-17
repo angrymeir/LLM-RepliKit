@@ -25,6 +25,8 @@ class PostProcessor(StudyPostprocessor):
         return passed_count / total_count if total_count > 0 else 0
 
     def postprocess(self, statistics_only):
+        if self.config.get("use_kubernetes", False):
+            return
         print("Starting postprocessing...")
         parent_dir = os.path.dirname(os.path.abspath(__file__))
         evidence_dir = os.path.join(parent_dir, "evidence")
