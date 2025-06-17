@@ -12,4 +12,5 @@ dependencies = [
     "requests>=2.32.4",
     "seaborn>=0.13.2",
     "python-dotenv>=1.0.1",
+    "kubernetes>=33.1.0",
 ]
