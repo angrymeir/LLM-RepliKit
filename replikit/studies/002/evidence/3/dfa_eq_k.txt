@@ -1,0 +1,20 @@
+Starting:  GPT3.5_Raw_Output
+2
+Starting item:  1
+Ending item:  1
+Starting item:  2
+Ending item:  2
+Starting:  GPT3.5_Refined_Output
+2
+Starting item:  1
+Ending item:  1
+Starting item:  2
+Ending item:  2
+GPT3.5_Raw_Output
+DFA-EQ@1: 50.0
+DFA-EQ@3: 50.0
+DFA-EQ@10: 50.0
+GPT3.5_Refined_Output
+DFA-EQ@1: 50.0
+DFA-EQ@3: 50.0
+DFA-EQ@10: 50.0

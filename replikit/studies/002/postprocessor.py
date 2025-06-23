@@ -23,6 +23,29 @@ class PostProcessor(StudyPostprocessor):
         passed_count = sum(item["passed"] for item in data)
         total_count = len(data)
         return passed_count / total_count if total_count > 0 else 0
+    
+    def remove_old_summary_files(self):
+        parent_dir = os.path.dirname(os.path.abspath(__file__))
+        evidence_dir = os.path.join(parent_dir, "evidence")
+
+        if not os.path.exists(evidence_dir):
+            return
+
+        print("Removing old summary files...")
+        for filename in ['all_runs_scores.csv', 'average_scores.csv', 'report.txt']:
+            file_path = os.path.join(evidence_dir, filename)
+            if os.path.exists(file_path):
+                os.remove(file_path)
+
+        for subdir in ['raw_plots', 'refined_plots']:
+            dir_path = os.path.join(evidence_dir, subdir)
+            if os.path.exists(dir_path):
+                for file in os.listdir(dir_path):
+                    file_path = os.path.join(dir_path, file)
+                    if os.path.isfile(file_path):
+                        os.remove(file_path)
+                os.rmdir(dir_path)
+
 
     def postprocess(self, statistics_only):
         if self.config.get("use_kubernetes", False):
@@ -30,6 +53,7 @@ class PostProcessor(StudyPostprocessor):
         print("Starting postprocessing...")
         parent_dir = os.path.dirname(os.path.abspath(__file__))
         evidence_dir = os.path.join(parent_dir, "evidence")
+        self.remove_old_summary_files()
         base_row = {
             "run_number": "0",
             "parseable": 0.0,
@@ -188,7 +212,6 @@ class PostProcessor(StudyPostprocessor):
         grouped_averages.to_csv(
             os.path.join(evidence_dir, "average_scores.csv"), index=True
         )
-
         report_path = os.path.join(evidence_dir, "report.txt")
         with open(report_path, "w") as report_file:
             report_file.write("Averages by type across all study runs:\n")

@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "completion": "- \"5\"\n- \"0\"\n- \"7\"",
+        "passed": false
+    },
+    {
+        "id": 1,
+        "completion": "Regex: \\b\\d\\b\n\nExplanation:\n- \\b: assert position at a word boundary\n- \\d: match any digit (0-9)\n- \\b: assert position at a word boundary",
+        "passed": false
+    },
+    {
+        "id": 1,
+        "completion": "Regex: \\d\n\nExplanation:\n- \\d: matches any numeric digit (0-9)",
+        "passed": false
+    },
+    {
+        "id": 1,
+        "completion": "Regex pattern: \\d\n\nExplanation:\n- \\d: matches any numeric digit (0-9)",
+        "passed": false
+    },
+    {
+        "id": 1,
+        "completion": "Regex: \\b\\d\\b\n\nThis regex pattern will match exactly 1 numeric digit. The \\b is a word boundary that ensures the digit is not part of a larger number. The \\d represents any numeric digit (0-9).",
+        "passed": false
+    },
+    {
+        "id": 1,
+        "completion": "Regex: \\d\n\nThis regex pattern will match exactly 1 numeric digit (0-9).",
+        "passed": false
+    },
+    {
+        "id": 1,
+        "completion": "Regex: \\d",
+        "passed": false
+    },
+    {
+        "id": 1,
+        "completion": "Regex: \\d",
+        "passed": false
+    },
+    {
+        "id": 1,
+        "completion": "- \"5\"\n- \"0\"\n- \"9\"",
+        "passed": false
+    },
+    {
+        "id": 1,
+        "completion": "Regex: \\d",
+        "passed": false
+    },
+    {
+        "id": 2,
+        "completion": "^\\d{5}$",
+        "passed": true
+    },
+    {
+        "id": 2,
+        "completion": "^\\d{5}$",
+        "passed": true
+    },
+    {
+        "id": 2,
+        "completion": "^\\d{5}$",
+        "passed": true
+    },
+    {
+        "id": 2,
+        "completion": "^\\d{5}$",
+        "passed": true
+    },
+    {
+        "id": 2,
+        "completion": "^\\d{5}$",
+        "passed": true
+    },
+    {
+        "id": 2,
+        "completion": "^\\d{5}$",
+        "passed": true
+    },
+    {
+        "id": 2,
+        "completion": "Pattern: ^\\d{5}$\n\n- ^ : Start of the string\n- \\d : Any numeric digit\n- {5} : 5 occurrences of the preceding element (\\d)\n- $ : End of the string",
+        "passed": false
+    },
+    {
+        "id": 2,
+        "completion": "^\\d{5}$",
+        "passed": true
+    },
+    {
+        "id": 2,
+        "completion": "^\\d{5}$",
+        "passed": true
+    },
+    {
+        "id": 2,
+        "completion": "^\\d{5}$",
+        "passed": true
+    }
+]

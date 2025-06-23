@@ -38,7 +38,7 @@ class Preprocessor(StudyPreprocessor):
                 client.images.build(
                     path=dockerfile_path, tag="002:latest", nocache=True
                 )
-            elif "002:latest" not in [img.tags for img in client.images.list()]:
+            elif "002:latest" not in [tag for img in client.images.list() for tag in img.tags]:
                 client.images.build(path=dockerfile_path, tag="002:latest", nocache=True)
                 print("Docker image built successfully!")
         except docker.errors.BuildError as e:

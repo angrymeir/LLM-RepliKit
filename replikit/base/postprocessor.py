@@ -1,3 +1,4 @@
+from matplotlib import pyplot as plt
 import numpy as np
 import seaborn as sns
 from typing import Any
@@ -76,6 +77,7 @@ class StudyPostprocessor:
         """
         plot = sns.displot(results, bins=100, label='Distribution')
         plot.figure.savefig(file_path)
+        plt.close(plot.figure)
 
 
     def _configure(self) -> None:
