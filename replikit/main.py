@@ -104,6 +104,8 @@ if __name__ == "__main__":
     parser.add_argument("--study", required=True)
     parser.add_argument("--test", default=0, type=int)
     parser.add_argument("--no_execution", action='store_true')
+    parser.add_argument("--skip-pre", action='store_true')
+    parser.add_argument("--skip-post", action='store_true')
     parser.add_argument("--global_config", default="configs/global.yaml")
     parser.add_argument("--reset", action='store_true', help="Reset the study and re-download source files if necessary.")
     args = parser.parse_args()
@@ -111,6 +113,8 @@ if __name__ == "__main__":
     global_config: Dict[str, Any] = load_yaml(args.global_config)
     global_config['reset'] = args.reset
     if not args.no_execution:
-        prepare(args.study, global_config)
+        if not args.skip_pre:
+            prepare(args.study, global_config)
         run(args.study, args.test, global_config)
-    postprocess(args.study, global_config, args.no_execution)
+    if not args.skip_post:
+        postprocess(args.study, global_config, args.no_execution)

@@ -1,10 +1,12 @@
+from time import sleep
+
 from dotenv import load_dotenv
 from base.runner import StudyRunner
 import docker
 import os
 import sys
 import shutil
-from kubernetes import client
+from kubernetes import client as kclient
 from kubernetes import config as kconfig
 
 
@@ -59,8 +61,8 @@ class Runner(StudyRunner):
 
         if not self.config.get("use_kubernetes", False):
 
-            client = docker.from_env()
-            container = client.containers.create(
+            docker_client = docker.from_env()
+            container = docker_client.containers.create(
                 image=self.config["docker_image_name"],
                 volumes={self.tmp_evidence_dir: {"bind": "/workspace/output", "mode": "rw"}},
                 tty=True,
@@ -80,44 +82,47 @@ class Runner(StudyRunner):
                 except UnicodeDecodeError:
                     continue  # skip problematic chunks -> some prints were chinese in this study and caused problems
         else:
-            kconfig.load_kube_config()
-            openai_key = os.getenv("OPENAI_API_KEY")
+            # kconfig.load_kube_config() # use on local machines only with KUBECONFIG set
+            kconfig.load_incluster_config()  # for use with ServiceAccounts
+            namespace = os.getenv("MY_POD_NAMESPACE")
 
             # Set up job name and image
             job_name = f"study-replication-job-{run_number}"
             image = self.config["docker_image_name"]
 
             # Define the Job spec
-            job = client.V1Job(
-                metadata=client.V1ObjectMeta(name=job_name),
-                spec=client.V1JobSpec(
-                    template=client.V1PodTemplateSpec(
-                        spec=client.V1PodSpec(
+            job = kclient.V1Job(
+                metadata=kclient.V1ObjectMeta(name=job_name),
+                spec=kclient.V1JobSpec(
+                    template=kclient.V1PodTemplateSpec(
+                        spec=kclient.V1PodSpec(
+                            image_pull_secrets=[kclient.V1LocalObjectReference(name="replikit-access")],
                             containers=[
-                                client.V1Container(
+                                kclient.V1Container(
                                     name="replication",
                                     image=image,
                                     tty=True,
                                     stdin=True,
-                                    env=[
-                                        client.V1EnvVar(name="OPENAI_API_KEY", value=openai_key)
+                                    env_from=[
+                                      kclient.V1EnvFromSource(
+                                          secret_ref=kclient.V1SecretEnvSource(name="openai-access")
+                                      )
                                     ],
                                     volume_mounts=[
-                                        client.V1VolumeMount(
+                                        kclient.V1VolumeMount(
                                             name="output-volume",
-                                            mount_path="/workspace/output"
+                                            mount_path="/experiment/output"
                                         )
                                     ]
                                 )
                             ],
                             restart_policy="Never",
                             volumes=[
-                                client.V1Volume(
+                                kclient.V1Volume(
                                     name="output-volume",
-                                    host_path=client.V1HostPathVolumeSource(
-                                        path=self.tmp_evidence_dir,
-                                        type="DirectoryOrCreate"
-                                    )
+                                    #  manually created pvc
+                                    persistent_volume_claim=kclient.V1PersistentVolumeClaimVolumeSource(
+                                        claim_name="exp-002-evidence")
                                 )
                             ]
                         )
@@ -127,21 +132,32 @@ class Runner(StudyRunner):
             )
 
             # Create the Job
-            batch_v1 = client.BatchV1Api()
+            batch_v1 = kclient.BatchV1Api()
             api_response = batch_v1.create_namespaced_job(
                 body=job,
-                namespace="default"
+                namespace=namespace
             )
             print(f"Job {job_name} submitted.")
 
             # Stream logs (optional)
-            core_v1 = client.CoreV1Api()
-            pod_list = core_v1.list_namespaced_pod(namespace="default", label_selector=f"job-name={job_name}")
+            core_v1 = kclient.CoreV1Api()
+            pod_list = core_v1.list_namespaced_pod(namespace=namespace, label_selector=f"job-name={job_name}")
             while not pod_list.items:
-                pod_list = core_v1.list_namespaced_pod(namespace="default", label_selector=f"job-name={job_name}")
+                pod_list = core_v1.list_namespaced_pod(namespace=namespace, label_selector=f"job-name={job_name}")
 
             pod_name = pod_list.items[0].metadata.name
-            log_stream = core_v1.read_namespaced_pod_log(name=pod_name, namespace="default", follow=True, _preload_content=False)
+            log_stream = None
+            retries = 0
+            while not log_stream and retries < 10:
+                try:
+                    log_stream = core_v1.read_namespaced_pod_log(name=pod_name, namespace=namespace, follow=True, _preload_content=False)
+                except kclient.exceptions.ApiException:  # Exception if Container is still creating
+                    retries += 1
+                    if retries >= 10:
+                        raise
+
+                    sleep(5)
+
             for line in log_stream:
                 try:
                     sys.stdout.write(line.decode("utf-8"))
