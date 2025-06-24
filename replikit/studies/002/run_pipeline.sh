@@ -1,9 +1,6 @@
 #!/bin/bash
 set -e
 
-ln -s /experiment /workspace
-cd /workspace
-
 echo "[Init] Creating config.json from OPENAI_API_KEY env variable..."
 cat <<EOF > /workspace/RegexEval/Generation/config.json
 {
