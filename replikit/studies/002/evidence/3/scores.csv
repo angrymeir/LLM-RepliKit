@@ -1,3 +1,0 @@
-type,run_number,parseable,EM,DFA-EQ@1,DFA-EQ@3,DFA-EQ@10,pass_at_1,pass_at_3,pass_at_10,vul@1_rescue,vul@3_rescue,vul@10_rescue,vul@1_redos,vul@3_redos,vul@10_redos
-raw,3,0.5,500.0,50.0,50.0,50.0,50.0,50.0,50.0,0.0,0.0,0.0,0.0,0.0,0.0
-refined,3,0.45,450.0,50.0,50.0,50.0,45.0,50.0,50.0,0.0,0.0,0.0,0.0,0.0,0.0

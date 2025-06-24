@@ -1,4 +1,0 @@
-GPT3.5_Raw_Output
-500.0
-GPT3.5_Refined_Output
-450.0
