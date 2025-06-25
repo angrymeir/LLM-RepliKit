@@ -39,8 +39,7 @@ class Preprocessor(StudyPreprocessor):
         env_file = self.repl_package_path / ".env"
         with open(env_file, 'w') as f:
             f.write("OPENAI_API_KEY={}".format(os.getenv("OPENAI_API_KEY")))
-        
-    
+
     def _prepare_environment(self, environment: Any) -> None:
         print("Building docker image...")
         client = docker.from_env()
@@ -51,6 +50,9 @@ class Preprocessor(StudyPreprocessor):
             if self.config.get('reset', False):
                 client.images.build(path=dockerfile_path, tag="009:latest", nocache=True)
                 print("Docker image built successfully!")
+            # if image doesn't exist, build it
+            elif "009:latest" not in [img.tags for img in client.images.list()]:
+                client.images.build(path=dockerfile_path, tag="009:latest", nocache=True)
         except docker.errors.BuildError as e:
             print("Build failed:", e)
         except Exception as e:

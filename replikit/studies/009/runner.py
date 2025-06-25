@@ -11,8 +11,26 @@ class Runner(StudyRunner):
 
     def __init__(self, config):
         self.config = config
+        self.tmp_evidence_dir = "/tmp/{}/fix_reports".format(
+            self.config['description'].lower().replace(" ", "").replace(".", "-").replace(":", "-")
+        )
+        self.evidence_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'evidence')
+        if self.config.get('reset', False):
+            shutil.rmtree(self.tmp_evidence_dir, ignore_errors=True)
+            shutil.rmtree(self.evidence_dir, ignore_errors=True)
+        if not os.path.exists(self.tmp_evidence_dir):
+            os.makedirs(self.tmp_evidence_dir, exist_ok=True)
 
+    def _skip_run(self, run_number):
+        """
+        Check if the run should be skipped based on the evidence directory.
+        """
+        return os.path.exists(os.path.join(self.evidence_dir, "{}".format(run_number)))
+    
     def run(self, run_number):
+        if self._skip_run(run_number):
+            print("Skipping run {}: evidence already exists.".format(run_number))
+            return
         print("Running the study replication package...", run_number)
         # docker run
         client = docker.from_env()
@@ -38,16 +56,20 @@ class Runner(StudyRunner):
         for chunk in log_stream:
             sys.stdout.write(chunk.decode())
             sys.stdout.flush()
+
+        container.stop()
+        client.containers.prune()
         
     def save_evidence(self, run_number):
-        tmp_evidence_dir = "/tmp/{}/fix_reports".format(
-            self.config['description'].lower().replace(" ", "").replace(".", "-").replace(":", "-")
-        )
+
+        if self._skip_run(run_number):
+            return
         # get this files parent directory
-        parent_dir = os.path.dirname(os.path.abspath(__file__))
-        evidence_dir = os.path.join(parent_dir, 'evidence/{}'.format(
+        e_dir = os.path.join(self.evidence_dir, '{}'.format(
             run_number
         ))
-        os.makedirs(evidence_dir, exist_ok=True)
+        os.makedirs(e_dir, exist_ok=True)
         # copy the evidence from the container to the evidence directory
-        shutil.copytree(tmp_evidence_dir, evidence_dir, dirs_exist_ok=True)
+        shutil.copytree(self.tmp_evidence_dir, e_dir, dirs_exist_ok=True)
+        # delete the tmp_evidence_dir
+        shutil.rmtree(self.tmp_evidence_dir, ignore_errors=True)
