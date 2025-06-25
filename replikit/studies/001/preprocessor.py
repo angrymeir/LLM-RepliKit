@@ -1,7 +1,8 @@
 from base.preprocessor import StudyPreprocessor
 
+
 class Preprocessor(StudyPreprocessor):
-    
+
     def __init__(self, config):
         super().__init__(config)
 
@@ -9,4 +10,5 @@ class Preprocessor(StudyPreprocessor):
         pass
 
     def magic(self):
-        print("Preprocessing everthing...")
+        print("Preprocessing everything...")
+
