@@ -24,6 +24,10 @@ class Preprocessor(StudyPreprocessor):
         if not os.path.exists(self.repl_package_path):
             os.makedirs(self.repl_package_path)
             Repo.clone_from(reference, self.repl_package_path)
+    
+    def _prepare_environment(self, environment: Any) -> None:
+        print("Build Docker image...")
+        
 
     def magic(self):
         print("Preprocessing everything...")
