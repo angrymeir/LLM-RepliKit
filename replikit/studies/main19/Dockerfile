@@ -3,8 +3,9 @@ FROM python:3.12.11-slim
 WORKDIR /app
 
 COPY ./replicationpackage .
+COPY ./requirements.txt .
+COPY ./data/*.* .
 
-RUN pip3 install --no-cache-dir sentence-transformers==2.2.2 \
-    huggingface-hub==0.25.2
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 CMD ["python3", "preprocess.py"]
