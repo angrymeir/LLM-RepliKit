@@ -1,2 +1,0 @@
-The model `code-davinci-002` has been deprecated.
-Recommended replacement for the model (according to https://platform.openai.com/docs/deprecations) is gpt-3.5-turbo-instruct
