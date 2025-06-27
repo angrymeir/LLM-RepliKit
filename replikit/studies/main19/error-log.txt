@@ -1,0 +1,30 @@
+Cmd: python test_codex.py --rerank token --retrieve semantic
+Error:
+Traceback (most recent call last):
+  File "/Users/andi/dev/angrymeir/LLM-RepliKit/replikit/studies/main19/replicationpackage/test_codex.py", line 574, in <module>
+    test_metric(references, candidates)
+  File "/Users/andi/dev/angrymeir/LLM-RepliKit/replikit/studies/main19/replicationpackage/test_codex.py", line 499, in test_metric
+    candidate = candidates[i]
+                ~~~~~~~~~~^^^
+IndexError: list index out of range
+
+
+Cmd: python test_codex.py --rerank token --retrieve false
+Error:
+Traceback (most recent call last):
+  File "/Users/andi/dev/angrymeir/LLM-RepliKit/replikit/studies/main19/replicationpackage/test_codex.py", line 563, in <module>
+    test_sample_rerank(
+  File "/Users/andi/dev/angrymeir/LLM-RepliKit/replikit/studies/main19/replicationpackage/test_codex.py", line 238, in test_sample_rerank
+    code_tokens = tokenize(training_comments[int(sim_ids[0])])
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+IndexError: list index out of range
+
+
+Cmd: python test_codex.py --rerank false --retrieve semantic
+Error:
+Traceback (most recent call last):
+  File "/Users/andi/dev/angrymeir/LLM-RepliKit/replikit/studies/main19/replicationpackage/test_codex.py", line 553, in <module>
+    test_sample_retrieve(
+  File "/Users/andi/dev/angrymeir/LLM-RepliKit/replikit/studies/main19/replicationpackage/test_codex.py", line 178, in test_sample_retrieve
+    "\n#Example Code{}:\n".format(i) + training_codes[int(sim_ids[i])]
+IndexError: list index out of range                                       ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
