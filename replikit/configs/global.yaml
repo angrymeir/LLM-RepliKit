@@ -7,6 +7,14 @@ study:
         runner_module: "001.runner"
         postprocessor_module: "001.postprocessor"
         significant_sample_size: 30
+    "005":
+        description: "Demonstration-Free: Towards More Practical Log Parsing with Large Language Models"
+        preprocessor_module: "005.preprocessor"
+        runner_module: "005.runner"
+        postprocessor_module: "005.postprocessor"
+        significant_sample_size: 30
+        source_dir: "replicationpackage"
+        docker_image_name: "005:latest"
     "009":
         description: "Lost in Translation: A Study of Bugs Introduced by Large Language Models while Translating Code"
         preprocessor_module: "009.preprocessor"
