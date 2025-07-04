@@ -1,0 +1,8 @@
+# created by Replicators, not given by publishers
+openai==0.28
+numpy
+scikit-learn
+sentence_transformers
+torch
+pandas
+dotenv

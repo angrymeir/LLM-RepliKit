@@ -7,6 +7,14 @@ study:
         runner_module: "001.runner"
         postprocessor_module: "001.postprocessor"
         significant_sample_size: 30
+    "007":
+        description: "Large Language Model for Vulnerability Detection"
+        preprocessor_module: "007.preprocessor"
+        runner_module: "007.runner"
+        postprocessor_module: "007.postprocessor"
+        significant_sample_size: 30
+        source_dir: "ChatGPT_exp"
+        docker_image_name: "007:latest"
     "009":
         description: "Lost in Translation: A Study of Bugs Introduced by Large Language Models while Translating Code"
         preprocessor_module: "009.preprocessor"
