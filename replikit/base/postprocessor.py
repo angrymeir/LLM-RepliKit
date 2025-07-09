@@ -37,13 +37,13 @@ class StudyPostprocessor:
         """
         raise NotImplementedError("This method should be overridden by subclasses")
 
-    def _calculate_quantils(self, results: list, quantiles=[0.05,0.1,0.25,0.5,0.75,0.9,0.95]) -> list:
+    def _calculate_quantils(self, results: list, quantiles=[0.025,0.1,0.25,0.5,0.75,0.9,0.975]) -> list:
         """
         Estimate posterior quantiles from the given results using the Bayesian bootstrap.
         
         Args:
             results (list): List of numeric results from the study.
-            quantiles (list, optional): List of quantile levels to compute. Defaults to [0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95].
+            quantiles (list, optional): List of quantile levels to compute. Defaults to [0.025, 0.05, 0.1, 0.25, 0.5, 0.75, 0.9, 0.95, 0.975].
         
         Returns:
             tuple: A tuple where the first element is the list of quantiles,
