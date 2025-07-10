@@ -1,10 +1,10 @@
 # Use Ubuntu 22.04 as base
-FROM ubuntu:22.04
+FROM --platform=linux/arm64 ubuntu:22.04
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
-ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-arm64
 ENV GO_VERSION=1.20
 ENV RUST_VERSION=1.73.0
 ENV PATH="/usr/local/go/bin:/root/.cargo/bin:$PATH"

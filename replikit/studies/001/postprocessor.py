@@ -1,5 +1,6 @@
 from base.postprocessor import StudyPostprocessor
 
+
 class PostProcessor(StudyPostprocessor):
 
     def __init__(self, config):
@@ -9,4 +10,5 @@ class PostProcessor(StudyPostprocessor):
         pass
 
     def postprocess(self):
-        print("Postprocessing everthing...")
+        print("Postprocessing everything...")
+
