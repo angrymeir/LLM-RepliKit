@@ -8,7 +8,7 @@ class PostProcessor(StudyPostprocessor):
 
     def __init__(self, config):
         super().__init__(config)
-        self.languages = ['Python']
+        self.languages = ['Python', 'Go']
 
     def _configure(self):
         pass
@@ -54,8 +54,10 @@ class PostProcessor(StudyPostprocessor):
                 language_accuracies[lang].append(np.mean(accuracies))
 
         quantiles, posterior_quantiles = self._calculate_quantils(language_accuracies['Python'])
+        quantiles_go, posterior_quantiles_go = self._calculate_quantils(language_accuracies['Go'])
 
-        self._plot_distribution(language_accuracies['Python'], os.path.join(evidence_dir, 'distribution.png'))
+        self._plot_distribution(language_accuracies['Python'], os.path.join(evidence_dir, 'distribution_python.png'))
+        self._plot_distribution(language_accuracies['Go'], os.path.join(evidence_dir, 'distribution_go.png'))
         
         # Write report
         with open(os.path.join(evidence_dir, 'report.txt'), 'w') as report:
@@ -63,11 +65,16 @@ class PostProcessor(StudyPostprocessor):
             for lang, avg in averages.items():
                 report.write(f"{lang}: {avg:.2f}\n")
 
-            report.write("\n# Posterior Percentiles\n")
+            report.write("\n# Posterior Percentiles Python\n")
             for q in quantiles:
                 print(f"Posterior {int(q*100)}th percentile: {np.mean(posterior_quantiles[q]):.4f}")
                 report.write(f"Posterior {int(q*100)}th percentile: {np.mean(posterior_quantiles[q]):.4f}\n")
 
+            report.write("\n# Posterior Percentiles Go\n")
+            for q in quantiles_go:
+                print(f"Posterior {int(q*100)}th percentile: {np.mean(posterior_quantiles_go[q]):.4f}")
+                report.write(f"Posterior {int(q*100)}th percentile: {np.mean(posterior_quantiles_go[q]):.4f}\n")
+            
             report.write("\n\n# Detailed results per experiment run:\n")
             for repetition, data in results.items():
                 report.write(f"Repetition: {repetition}\n")
