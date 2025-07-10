@@ -1,0 +1,10 @@
+{
+    "model": "gpt3dot5",
+    "prompt": "A2",
+    "k": 1,
+    "accuracy": 0.6244,
+    "precision": 0.7222,
+    "recall": 0.4041,
+    "f1": 0.5183,
+    "f0.5": 0.624
+}
