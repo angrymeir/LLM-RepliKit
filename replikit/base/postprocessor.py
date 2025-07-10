@@ -74,7 +74,8 @@ class StudyPostprocessor:
             results (list): List of numerical results to be plotted.
             file_path (str): File path where the plot will be saved.
         """
-        plot = sns.displot(results, bins=100, label='Distribution')
+        sns.set_context("paper", font_scale=1.3)
+        plot = sns.displot(results, bins=100, label='Distribution', height=3, aspect=1.5)
         plot.figure.savefig(file_path)
 
 
