@@ -7,6 +7,15 @@ study:
         runner_module: "001.runner"
         postprocessor_module: "001.postprocessor"
         significant_sample_size: 30
+    "002":
+        description: "RegExEval: Evaluating Generated Regular Expressions and their Proneness to DoS Attacks"
+        preprocessor_module: "002.preprocessor"
+        runner_module: "002.runner"
+        postprocessor_module: "002.postprocessor"
+        significant_sample_size: 30
+        source_dir: ""
+        docker_image_name: "002:latest"
+        use_kubernetes: false
     "003":
         description: "An Empirical Study on Compliance with Ranking Transparency in the Software Documentation of EU Online Platforms"
         preprocessor_module: "003.preprocessor"
