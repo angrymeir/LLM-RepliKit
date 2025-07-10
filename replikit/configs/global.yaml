@@ -7,6 +7,14 @@ study:
         runner_module: "001.runner"
         postprocessor_module: "001.postprocessor"
         significant_sample_size: 30
+    "003":
+        description: "An Empirical Study on Compliance with Ranking Transparency in the Software Documentation of EU Online Platforms"
+        preprocessor_module: "003.preprocessor"
+        runner_module: "003.runner"
+        postprocessor_module: "003.postprocessor"
+        significant_sample_size: 30
+        source_docker_file: "francescosovrano/dox4p2bcompliance:latest"
+        docker_image_name: "003:latest"
     "005":
         description: "Demonstration-Free: Towards More Practical Log Parsing with Large Language Models"
         preprocessor_module: "005.preprocessor"
@@ -25,6 +33,14 @@ study:
         source_files: "https://github.com/Intelligent-CAT-Lab/PLTranslationEmpirical.git"
         data_files: "https://zenodo.org/records/10447705/files/dataset.zip?download=1"
         docker_image_name: "009:latest"
+    "main2":
+        description: "CrashTranslator: Automatically Reproducing Mobile Application Crashes Directly from Stack Trace"
+        preprocessor_module: "main2.preprocessor"
+        runner_module: "main2.runner"
+        postprocessor_module: "main2.postprocessor"
+        significant_sample_size: 30
+        source_dir: "replicationpackage"
+        source_files: "https://github.com/wuchiuwong/CrashTranslator.git"
     "main19":
         description: "Large Language Models are Few-Shot Summarizers: Multi-Intent Comment Generation via In-Context Learning"
         preprocessor_module: "main19.preprocessor"
