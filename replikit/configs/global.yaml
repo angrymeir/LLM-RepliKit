@@ -24,6 +24,14 @@ study:
         significant_sample_size: 30
         source_docker_file: "francescosovrano/dox4p2bcompliance:latest"
         docker_image_name: "003:latest"
+    "005":
+        description: "Demonstration-Free: Towards More Practical Log Parsing with Large Language Models"
+        preprocessor_module: "005.preprocessor"
+        runner_module: "005.runner"
+        postprocessor_module: "005.postprocessor"
+        significant_sample_size: 30
+        source_dir: "replicationpackage"
+        docker_image_name: "005:latest"
     "007":
         description: "Large Language Model for Vulnerability Detection"
         preprocessor_module: "007.preprocessor"
