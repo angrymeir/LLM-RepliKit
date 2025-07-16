@@ -16,13 +16,6 @@ class PostProcessor(StudyPostprocessor):
 
     def _configure(self):
         pass
-
-    def compute_unparseable_ratio(self, file_path):
-        with open(file_path, "r") as f:
-            data = json.load(f)
-        unparseable_count = sum(not item["passed"] for item in data)
-        total_count = len(data)
-        return unparseable_count / total_count if total_count > 0 else 0
     
     def remove_old_summary_files(self):
         parent_dir = os.path.dirname(os.path.abspath(__file__))
@@ -56,7 +49,6 @@ class PostProcessor(StudyPostprocessor):
         self.remove_old_summary_files()
         base_row = {
             "run_number": "0",
-            "unparseable": 0.0,
             "EM": 0.0,
             "DFA-EQ@1": 0.0,
             "DFA-EQ@3": 0.0,
@@ -84,21 +76,7 @@ class PostProcessor(StudyPostprocessor):
                 df_single_run = pd.DataFrame([raw_row, refined_row]).set_index("type")
                 # run_number
                 df_single_run.at["raw", "run_number"] = str(dir_name)
-                df_single_run.at["refined", "run_number"] = str(dir_name)
-                # parseable
-                raw_file = os.path.join(
-                    dir_path, "GPT3.5_Raw_Output_Compiled_Result.json"
-                )
-                refined_file = os.path.join(
-                    dir_path, "GPT3.5_Refined_Output_Compiled_Result.json"
-                )
-
-                df_single_run.at["raw", "unparseable"] = self.compute_unparseable_ratio(
-                    raw_file
-                )
-                df_single_run.at["refined", "unparseable"] = self.compute_unparseable_ratio(
-                    refined_file
-                )
+                df_single_run.at["refined", "run_number"] = str(dir_name)                
                 # DFA_EQ@k
                 file_path = os.path.join(dir_path, "dfa_eq_k.txt")
                 with open(file_path, "r") as f:
