@@ -67,3 +67,12 @@ study:
         source_dir: "replicationpackage"
         source_files: "https://github.com/gmy2013/LLM_Comment_Generation.git"
         docker_image_name: "main19:latest"
+    "main41":
+        description: Automatic Semantic Augmentation of Language Model Prompts for Code Summarization
+        preprocessor_module: "main41.preprocessor"
+        runner_module: "main41.runner"
+        postprocessor_module: "main41.postprocessor"
+        significant_sample_size: 30
+        source_dir: "replicationpackage"
+        source_files: "https://zenodo.org/api/records/10494170/files-archive"
+        docker_image_name: "main41:latest"

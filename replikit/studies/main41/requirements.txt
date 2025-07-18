@@ -1,0 +1,6 @@
+numpy
+openai==0.28.1
+rank_bm25
+scipy
+setuptools
+tree-sitter==0.21.3
