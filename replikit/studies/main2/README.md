@@ -1,10 +1,18 @@
 # Study main2
 
+**Title:** CrashTranslator: Automatically Reproducing Mobile Application: Crashes Directly from Stack Trace
+
 ## Can we replicate the results?
 
 Answer: No
 
-Runs and errors:
+## Changes
+
+### Requirements.txt
+
+- In the original artefact, dependencies are not specified. We recovered working dependencies for the study original artefact.
+
+## Errors
 
 ```sh
 > openai api fine_tunes.create -t gpt3/mix_data_train.jsonl -m curie
@@ -28,7 +36,7 @@ It also produces the same error if the model `gpt-3.5-turbo` is given as an argu
 ```
 
 Potential explanations are API changes for fine-tuning models.
-The `openai` python app and the API itself now use different names to manage jobs, e.g., `fine_tuning.jobs.create` instead of `fine_tunes.create `.
+The `openai` python app and the API itself now use different names to manage jobs, e.g., `fine_tuning.jobs.create` instead of `fine_tunes.create`.
 
 Using the new API endpoints doesn't resolve the issues.
 
@@ -38,12 +46,9 @@ Using the new API endpoints doesn't resolve the issues.
 Error: Error code: 400 - {'error': {'message': 'invalid training_file: gpt3/mix_data_train.jsonl', 'type': 'invalid_request_error', 'param': 'training_file', 'code': None}}
 ```
 
-
 Further sources of problems are that the [Appium Desktop](https://github.com/appium/appium-desktop) application is deprecated and was archived on April 25, 2023.
 
 ## LLM model
 
 The study used GPT-3 in an unspecified version.
 Via the API, the model `gpt-3.5-turbo-0125` is available as the only GPT-3 model.
-
-
