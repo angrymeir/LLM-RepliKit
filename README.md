@@ -10,7 +10,7 @@ It is built to reproduce LLM studies, but can also be employed for other experim
 
 Check out the [replikit directory](replikit) for guidance on how to replicate studies.
 
-## Replication results
+## Reproduction results
 
 | Success | ID | Title | DOI |
 |------ | ----- | ------ | ------ |
