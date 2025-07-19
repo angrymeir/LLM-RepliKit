@@ -1,12 +1,34 @@
 # Study main19
 
+**Title:** Large Language Models are Few-Shot Summarizers: Multi-Intent Comment Generation via In-Context Learning
+
 ## Can we replicate the results?
 
 Answer: No
 
-✅ Pre-processing via `python preprocess.py` worked.
+## How to run the study?
 
-❌ Not able to replicate results.
+Only the pre-processor script is runnable.
+
+Either run the pre-processor script directly
+
+```sh
+python preprocess.py
+```
+
+or run the study via the RepliKit CLI:
+
+```sh
+uv run main.py --study main19`
+```
+
+## Changes
+
+### Requirements.txt
+
+- In the original artefact, dependencies are not specified. We recovered working dependencies for the study original artefact.
+
+## Errors
 
 Numerous `index out of range` errors occurred while running the `test_codex.py` script. It seems that the dataset access implementation is incorrect.
 
