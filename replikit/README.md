@@ -41,6 +41,22 @@ To run RepliKit, you can use the following command:
 uv run main.py --study <STUDY_ID> --test <TESTREPETITIONS> --reset
 ```
 
+## How to reproduce a study with existing evidence
+
+To reproduce the results for a study using the evidence uploaded by us run:
+
+```bash
+uv run main.py --study <STUDY_ID> --no_execution
+```
+
+To reproduce the results for a study by running them yourself:
+
+```bash
+export OPENAI_API_KEY=''
+export OPENAI_ORGANIZATION=''
+uv run main.py --study <STUDY_ID> --reset
+```
+
 ## Add a new study to RepliKit
 
 To add a new study to RepliKit, you can follow these steps:
