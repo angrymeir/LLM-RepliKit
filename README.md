@@ -8,7 +8,7 @@ It is built to reproduce LLM studies, but can also be employed for other experim
 
 ## How to get started
 
-Check out the [replikit directory](replikit) for guidance on how to replicate studies.
+Check out the [replikit directory](replikit/) for guidance on how to replicate studies.
 
 ## Reproduction results
 
