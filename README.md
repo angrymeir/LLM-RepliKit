@@ -1,4 +1,5 @@
 # LLM-RepliKit
+[![DOI](https://zenodo.org/badge/987031008.svg)](https://doi.org/10.5281/zenodo.17589277)
 
 RepliKit is a framework to reproduce experimental software studies.
 It is built to reproduce LLM studies, but can also be employed for other experimental software studies.
